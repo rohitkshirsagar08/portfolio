@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rohit Kshirsagar | Gameplay & Combat Programmer — Targeting Call of Duty</title>
+  <meta name="description" content="Official combat dossier and portfolio for Rohit Kshirsagar, Gameplay & Combat Programmer targeting Call of Duty (Infinity Ward, Treyarch, Sledgehammer Games). Specializing in C++, deterministic ballistics, weapon recoil kinetics, and 128-tick rollback netcode.">
+  <meta name="keywords" content="Rohit Kshirsagar, Call of Duty, Gameplay Programmer, Combat Programmer, C++, Game Development, Unreal Engine, Netcode, Ballistics, Recoil, Activision">
+  <meta name="author" content="Rohit Kshirsagar">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Rohit Kshirsagar | Gameplay & Combat Programmer — Targeting Call of Duty">
+  <meta property="og:description" content="Tactical combat mechanics, C++ ballistics simulation, and low-latency multiplayer architecture targeting Call of Duty studios.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/hero-bg.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Background Overlays -->
+  <div class="hud-grid-overlay" aria-hidden="true"></div>
+  <div class="hud-scanlines" aria-hidden="true"></div>
+  <div class="radar-sweep-effect" aria-hidden="true"></div>
+
+  <!-- HUD Top Command Bar -->
+  <header class="hud-header" id="hudHeader">
+    <!-- Telemetry Strip -->
+    <div class="header-telemetry-strip">
+      <div class="telemetry-item">
+        <span class="live-dot"></span>
+        <span class="telemetry-tag">SYS_STATUS:</span> READY FOR DEPLOYMENT
+      </div>
+      <div class="telemetry-item">
+        <span class="telemetry-tag">TARGET_STUDIOS:</span> ACTIVISION // INFINITY WARD // TREYARCH // SLEDGEHAMMER
+      </div>
+      <div class="telemetry-item">
+        <span class="telemetry-tag">TIME_UTC:</span> <span id="militaryClock">2026.10.28 // 11:28:00 UTC</span>
+      </div>
+      <div class="telemetry-item">
+        <span class="telemetry-tag">NET_LATENCY:</span> <span id="telemetryPing">18ms</span>
+      </div>
+      <div class="telemetry-item">
+        <span class="telemetry-tag">TICKRATE:</span> 128.0 Hz
+      </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <div class="header-main-nav">
+      <a href="#hero" class="nav-brand" id="navBrandLogo">
+        <div class="brand-insignia">RK</div>
+        <div class="brand-info">
+          <span class="brand-name">Rohit Kshirsagar</span>
+          <span class="brand-title">TARGET: CALL OF DUTY COMBAT TEAM</span>
+        </div>
+      </a>
+
+      <nav aria-label="Main Portfolio Navigation">
+        <ul class="nav-links">
+          <li><a href="#hero" class="nav-link"><span class="nav-prefix">//01</span> Dossier</a></li>
+          <li><a href="#loadout" class="nav-link"><span class="nav-prefix">//02</span> Arsenal</a></li>
+          <li><a href="#simulator" class="nav-link"><span class="nav-prefix">//03</span> Ballistics Lab</a></li>
+          <li><a href="#projects" class="nav-link"><span class="nav-prefix">//04</span> Black Ops</a></li>
+          <li><a href="#code-vault" class="nav-link"><span class="nav-prefix">//05</span> C++ Architecture</a></li>
+          <li><a href="#service-record" class="nav-link"><span class="nav-prefix">//06</span> Record</a></li>
+          <li><a href="#transmission" class="nav-link"><span class="nav-prefix">//07</span> Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="hud-controls">
+        <button type="button" class="btn-hud-control active" id="toggleAudioBtn" title="Toggle Tactical Audio Effects">
+          SFX: LIVE
+        </button>
+        <button type="button" class="btn-hud-control" id="toggleNvgBtn" title="Toggle Night Vision Optic Mode">
+          NVG: OPTIC
+        </button>
+        <button type="button" class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Navigation Menu">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         HERO SECTION: OPERATOR BRIEFING & TARGET ROLE
+         ========================================================================== -->
+    <section class="hero-section" id="hero">
+      <img src="assets/hero-bg.jpg" alt="Call of Duty Tactical Combat Environment" class="hero-backdrop-image" width="1920" height="1080">
+      
+      <div class="container hero-grid">
+        <div class="hero-mission-dossier">
+          <!-- Clearance Tag -->
+          <div class="dossier-clearance-bar">
+            <span class="classification-stamp">CLASSIFIED // LEVEL 4</span>
+            <span>CALLSIGN: VORTEX</span>
+            <span>// DEPLOYMENT: IMMEDIATE</span>
+          </div>
+
+          <!-- Operator Name & Target Role -->
+          <div class="operator-name-badge">
+            <span class="hero-name-label">// CANDIDATE DOSSIER</span>
+            <h1 class="hero-operator-name">Rohit Kshirsagar</h1>
+            <div class="hero-operator-role">
+              Gameplay &amp; Combat Programmer
+              <span class="role-target-tag">TARGETING: CALL OF DUTY</span>
+            </div>
+          </div>
+
+          <!-- Tactical Mission Briefing -->
+          <div class="hero-mission-briefing tactical-frame">
+            <div class="corner-tl"></div><div class="corner-tr"></div>
+            <div class="corner-bl"></div><div class="corner-br"></div>
+            <div class="briefing-heading">// PRIMARY MISSION OBJECTIVE</div>
+            <p class="briefing-text">
+              Engineering high-cadence, visceral combat mechanics for the next generation of <span class="briefing-highlight">Call of Duty: Modern Warfare &amp; Warzone</span>. Architecting sub-millimeter deterministic ballistics, procedural recoil spring kinetics, responsive first-person camera feel, and 128-tick rollback multiplayer netcode.
+            </p>
+          </div>
+
+          <!-- Real-Time Combat Specs -->
+          <div class="hero-stats-row">
+            <div class="stat-box">
+              <div class="stat-value">C++20</div>
+              <div class="stat-label">Core Engine Language</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-value">128 HZ</div>
+              <div class="stat-label">Multiplayer Tickrate Target</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-value">&lt; 0.5 ms</div>
+              <div class="stat-label">Per-Frame Combat Budget</div>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="hero-actions">
+            <a href="#projects" class="btn-tactical btn-tactical-primary" id="heroViewProjectsBtn">
+              <span>EXPLORE BLACK OPS PROJECTS</span> ➔
+            </a>
+            <a href="#simulator" class="btn-tactical btn-tactical-outline" id="heroTestLabBtn">
+              <span>TEST RECOIL SIMULATOR</span> ⚡
+            </a>
+            <a href="#transmission" class="btn-tactical btn-tactical-amber" id="heroContactBtn">
+              <span>INITIATE CONTACT</span> 📡
+            </a>
+          </div>
+        </div>
+
+        <!-- Operator Dossier Identity Card -->
+        <aside class="operator-id-card tactical-frame" aria-label="Candidate Identification Card">
+          <div class="corner-tl"></div><div class="corner-tr"></div>
+          <div class="corner-bl"></div><div class="corner-br"></div>
+
+          <div class="card-top-bar">
+            <span class="card-title">// OPERATOR CREDENTIALS</span>
+            <span class="card-serial">ID: RK-COD-2026</span>
+          </div>
+
+          <div class="operator-portrait-wrapper">
+            <img src="assets/operator-avatar.jpg" alt="Rohit Kshirsagar Tactical Dossier Avatar" class="operator-portrait" width="600" height="600">
+            <div class="reticle-overlay"></div>
+          </div>
+
+          <div class="card-spec-list">
+            <div class="spec-entry">
+              <span class="spec-label">OPERATOR NAME:</span>
+              <span class="spec-val">ROHIT KSHIRSAGAR</span>
+            </div>
+            <div class="spec-entry">
+              <span class="spec-label">TARGET STUDIO:</span>
+              <span class="spec-val amber">ACTIVISION / COD STUDIOS</span>
+            </div>
+            <div class="spec-entry">
+              <span class="spec-label">DISCIPLINE:</span>
+              <span class="spec-val green">GAMEPLAY &amp; COMBAT ENGINEERING</span>
+            </div>
+            <div class="spec-entry">
+              <span class="spec-label">PRIMARY WEAPON:</span>
+              <span class="spec-val">C++20 / UNREAL ENGINE 5</span>
+            </div>
+            <div class="spec-entry">
+              <span class="spec-label">PHYSICS &amp; REPLICATION:</span>
+              <span class="spec-val green">DETERMINISTIC SIM / ROLLBACK</span>
+            </div>
+            <div class="spec-entry">
+              <span class="spec-label">LOCATION &amp; MOBILITY:</span>
+              <span class="spec-val">WORLDWIDE RELOCATION READY</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         LOADOUT ARSENAL / TECHNICAL WEAPONS SECTION
+         ========================================================================== -->
+    <section class="section" id="loadout">
+      <div class="container">
+        <header class="section-header">
+          <div class="section-kicker">TECHNICAL ARSENAL</div>
+          <h2 class="section-title">Gunsmith Class Loadout</h2>
+          <p class="section-subtitle">
+            Curated engineering stack honed for high-performance AAA combat design, zero-allocation game loops, and responsive gunplay kinetics.
+          </p>
+        </header>
+
+        <div class="loadout-grid">
+          <!-- Primary Slot -->
+          <article class="loadout-slot-card tactical-frame">
+            <div class="corner-tl"></div><div class="corner-tr"></div>
+            <div class="corner-bl"></div><div class="corner-br"></div>
+            <div class="slot-header">
+              <span class="slot-tag">PRIMARY WEAPON // ARCHITECTURE</span>
+              <span class="slot-tier">TIER 1</span>
+            </div>
+            <h3 class="slot-title">C++20 &amp; Engine Systems</h3>
+            <p class="slot-description">
+              High-performance systems programming with explicit memory management, SIMD vectorization, cache-coherent data layout (ECS), and lock-free thread queues.
+            </p>
+            <div class="tech-tags-list">
+              <span class="tech-pill highlight">C++20</span>
+              <span class="tech-pill highlight">Custom Memory Pools</span>
+              <span class="tech-pill">SIMD Intrinsics</span>
+              <span class="tech-pill">Multi-Threading / Tasks</span>
+              <span class="tech-pill">Cache Coherency (DOD)</span>
+              <span class="tech-pill">Bitwise Packing</span>
+            </div>
+            <div class="slot-telemetry">
+              <div class="telemetry-row">
+                <span class="telemetry-key">ALLOCATION BUDGET:</span>
+                <span class="telemetry-val">0 bytes / frame</span>
+              </div>
+              <div class="telemetry-row">
+                <span class="telemetry-key">COMPILER TARGET:</span>
+                <span class="telemetry-val">MSVC / Clang</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Secondary Slot -->
+          <article class="loadout-slot-card tactical-frame">
+            <div class="corner-tl"></div><div class="corner-tr"></div>
+            <div class="corner-bl"></div><div class="corner-br"></div>
+            <div class="slot-header">
+              <span class="slot-tag">SECONDARY WEAPON // GUNPLAY FEEL</span>
+              <span class="slot-tier">TIER 1</span>
+            </div>
+            <h3 class="slot-title">Combat &amp; Gunplay Kinetics</h3>
+            <p class="slot-description">
+              Procedural recoil curves, spring-mass dampening models, dynamic aiming down sights (ADS) interpolation, optic parallax, and weapon obstacle collision.
+            </p>
+            <div class="tech-tags-list">
+              <span class="tech-pill highlight">Procedural Recoil Springs</span>
+              <span class="tech-pill highlight">Ballistics Trajectory</span>
+              <span class="tech-pill">Inverse Kinematics (IK)</span>
+              <span class="tech-pill">Weapon Sway &amp; Breathing</span>
+              <span class="tech-pill">Material Penetration</span>
+              <span class="tech-pill">First-Person Camera Feel</span>
+            </div>
+            <div class="slot-telemetry">
+              <div class="telemetry-row">
+                <span class="telemetry-key">RESPONSE LATENCY:</span>
+                <span class="telemetry-val">&lt; 8.33 ms (120fps)</span>
+              </div>
+              <div class="telemetry-row">
+                <span class="telemetry-key">INTEGRATION MODEL:</span>
+                <span class="telemetry-val">Verlet / RK4</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tactical Slot -->
+          <article class="loadout-slot-card tactical-frame">
+            <div class="corner-tl"></div><div class="corner-tr"></div>
+            <div class="corner-bl"></div><div class="corner-br"></div>
+            <div class="slot-header">
+              <span class="slot-tag">TACTICAL // NETWORKING</span>
+              <span class="slot-tier">TIER 1</span>
+            </div>
+            <h3 class="slot-title">128-Tick Rollback Netcode</h3>
+            <p class="slot-description">
+              Multiplayer combat replication, client-side input prediction, server-authoritative reconciliation, historical lag compensation hit validation, and snapshot compression.
+            </p>
+            <div class="tech-tags-list">
+              <span class="tech-pill highlight">Client-Side Prediction</span>
+              <span class="tech-pill highlight">Lag Compensation Rewind</span>
+              <span class="tech-pill">Ring Buffer Snapshots</span>
+              <span class="tech-pill">UDP Sockets / Reliable Layer</span>
+              <span class="tech-pill">Delta Compression</span>
+              <span class="tech-pill">Jitter Buffering</span>
+            </div>
+            <div class="slot-telemetry">
+              <div class="telemetry-row">
+                <span class="telemetry-key">SERVER TICK:</span>
+                <span class="telemetry-val">128 Hz Dedicated</span>
+              </div>
+              <div class="telemetry-row">
+                <span class="telemetry-key">REWIND WINDOW:</span>
+                <span class="telemetry-val">Up to 250 ms RTT</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Lethal Slot -->
+          <article class="loadout-slot-card tactical-frame">
+            <div class="corner-tl"></div><div class="corner-tr"></div>
+            <div class="corner-bl"></div><div class="corner-br"></div>
+            <div class="slot-header">
+              <span class="slot-tag">LETHAL // ENGINES &amp; GRAPHICS</span>
+              <span class="slot-tier">TIER 1</span>
+            </div>
+            <h3 class="slot-title">Unreal Engine 5 &amp; Custom Engines</h3>
+            <p class="slot-description">
+              Deep mastery of Unreal Engine 5 source, Gameplay Ability System (GAS), Chaos Physics integration, custom animation nodes, and DirectX 12 / HLSL shader hooks.
+            </p>
+            <div class="tech-tags-list">
+              <span class="tech-pill highlight">UE5 Source Modifications</span>
+              <span class="tech-pill highlight">Gameplay Ability System</span>
+              <span class="tech-pill">Chaos Physics / Sub-stepping</span>
+              <span class="tech-pill">Animation State Machines</span>
+              <span class="tech-pill">Custom Engine Architecture</span>
+              <span class="tech-pill">HLSL / Compute Shaders</span>
+            </div>
+            <div class="slot-telemetry">
+              <div class="telemetry-row">
+                <span class="telemetry-key">ENGINE HOOKS:</span>
+                <span class="telemetry-val">Native C++ Subsystems</span>
+              </div>
+              <div class="telemetry-row">
+                <span class="telemetry-key">PHYSICS DISPATCH:</span>
+                <span class="telemetry-val">Fixed Sub-step 120Hz</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Perks Slot -->
+          <article class="loadout-slot-card tactical-frame">
+            <div class="corner-tl"></div><div class="corner-tr"></div>
+            <div class="corner-bl"></div><div class="corner-br"></div>
+            <div class="slot-header">
+              <span class="slot-tag">PERK 1 // PROFILING &amp; OPTIMIZATION</span>
+              <span class="slot-tier">SPECIALIST</span>
+            </div>
+            <h3 class="slot-title">Deep Profiling &amp; Diagnostics</h3>
+            <p class="slot-description">
+              Rigorous profiling for microsecond frame budgets, bottleneck isolation, cache miss reduction, memory leak eradication, and GPU/CPU synchronization.
+            </p>
+            <div class="tech-tags-list">
+              <span class="tech-pill highlight">RenderDoc</span>
+              <span class="tech-pill highlight">Tracy Profiler</span>
+              <span class="tech-pill">Unreal Insights</span>
+              <span class="tech-pill">PIX for Windows</span>
+              <span class="tech-pill">AddressSanitizer (ASan)</span>
+              <span class="tech-pill">VTune Amplifier</span>
+            </div>
+            <div class="slot-telemetry">
+              <div class="telemetry-row">
+                <span class="telemetry-key">PROFILING TARGET:</span>
+                <span class="telemetry-val">Sub-millisecond Spikes</span>
+              </div>
+              <div class="telemetry-row">
+                <span class="telemetry-key">MEMORY AUDIT:</span>
+                <span class="telemetry-val">Leak &amp; Truncation Free</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Field Upgrade Slot -->
+          <article class="loadout-slot-card tactical-frame">
+            <div class="corner-tl"></div><div class="corner-tr"></div>
+            <div class="corner-bl"></div><div class="corner-br"></div>
+            <div class="slot-header">
+              <span class="slot-tag">PERK 2 // PRODUCTION PIPELINE</span>
+              <span class="slot-tier">SPECIALIST</span>
+            </div>
+            <h3 class="slot-title">Studio Workflow &amp; Tools</h3>
+            <p class="slot-description">
+              AAA studio collaboration tooling, branch management across multi-site studios, automated unit/integration tests for combat systems, and continuous delivery.
+            </p>
+            <div class="tech-tags-list">
+              <span class="tech-pill highlight">Perforce (Helix Core)</span>
+              <span class="tech-pill highlight">Git / Git LFS</span>
+              <span class="tech-pill">Visual Studio 2022 / Rider</span>
+              <span class="tech-pill">CMake / UBT</span>
+              <span class="tech-pill">Python Pipeline Scripting</span>
+              <span class="tech-pill">Combat Unit Testing</span>
+            </div>
+            <div class="slot-telemetry">
+              <div class="telemetry-row">
+                <span class="telemetry-key">VERSION CONTROL:</span>
+                <span class="telemetry-val">Perforce / Git LFS</span>
+              </div>
+              <div class="telemetry-row">
+                <span class="telemetry-key">INTEGRATION:</span>
+                <span class="telemetry-val">Automated Test Suites</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         INTERACTIVE BALLISTICS & RECOIL PROVING GROUNDS
+         ========================================================================== -->
+    <section class="section" id="simulator">
+      <div class="container">
+        <header class="section-header">
+          <div class="section-kicker">LIVE COMBAT ENGINE SIMULATION</div>
+          <h2 class="section-title">Ballistics &amp; Recoil Proving Ground</h2>
+          <p class="section-subtitle">
+            Interactive firing range running a live 2nd-order damped harmonic spring simulation. Test weapon kick, cyclic rate, dispersion cones, and spring recovery in real-time.
+          </p>
+        </header>
+
+        <div class="simulator-panel tactical-frame">
+          <div class="corner-tl"></div><div class="corner-tr"></div>
+          <div class="corner-bl"></div><div class="corner-br"></div>
+
+          <!-- Canvas Firing Range -->
+          <div class="canvas-viewport-container">
+            <canvas id="recoilCanvas" width="800" height="480"></canvas>
+
+            <!-- Real-time Canvas HUD Overlay -->
+            <div class="canvas-hud-overlay">
+              <div class="hud-group">
+                <span>SHOTS FIRED: <span class="hud-readout-val" id="simShotsFired">0</span></span>
+                <span>RECOIL (X, Y): <span class="hud-readout-val amber" id="simRecoilOffset">0.0, 0.0</span></span>
+              </div>
+              <div class="hud-group">
+                <span>MUZZLE CLIMB: <span class="hud-readout-val" id="simMuzzleClimb">0%</span></span>
+                <span>SPRING DAMPING: <span class="hud-readout-val amber">CRITICAL (ζ=1.0)</span></span>
+              </div>
+            </div>
+
+            <div class="canvas-action-bar">
+              <button type="button" class="fire-trigger-btn" id="fireTriggerBtn">
+                💥 HOLD TO FIRE (TEST COMBAT FEEL)
+              </button>
+              <button type="button" class="btn-hud-control" id="resetRangeBtn">
+                RESET TARGET
+              </button>
+            </div>
+          </div>
+
+          <!-- Simulator Control Sidebar -->
+          <div class="sim-controls-sidebar">
+            <div class="control-panel-group">
+              <span class="control-label">// SELECT WEAPON PROFILE</span>
+              <div class="weapon-select-grid">
+                <button type="button" class="weapon-btn active" data-weapon="m4">
+                  <span>M4A1 ASSAULT RIFLE</span>
+                  <span style="color:var(--hud-green)">750 RPM</span>
+                </button>
+                <button type="button" class="weapon-btn" data-weapon="smg">
+                  <span>LACHMANN SUB (MP5)</span>
+                  <span style="color:var(--hud-amber)">900 RPM</span>
+                </button>
+                <button type="button" class="weapon-btn" data-weapon="sniper">
+                  <span>VICTUS XMR .50 CAL</span>
+                  <span style="color:var(--hud-cyan)">BOLT ACTION</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="control-panel-group">
+              <span class="control-label">// PHYSICS FORMULA IN REALTIME</span>
+              <div class="sim-code-preview">
+// Damped Harmonic Oscillator:
+F_spring = -k * Offset;
+F_damping = -c * Velocity;
+Accel = (F_spring + F_damping) / Mass;
+Velocity += Accel * DeltaTime;
+Offset += Velocity * DeltaTime;
+              </div>
+            </div>
+
+            <div class="control-panel-group">
+              <span class="control-label">// TELEMETRY DIAGNOSTICS</span>
+              <div class="slot-telemetry">
+                <div class="telemetry-row">
+                  <span class="telemetry-key">OPTIC PARALLAX:</span>
+                  <span class="telemetry-val">ACTIVE</span>
+                </div>
+                <div class="telemetry-row">
+                  <span class="telemetry-key">DISPERSION MOA:</span>
+                  <span class="telemetry-val">1.2 MOA</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         FEATURED BLACK OPS / PROJECTS
+         ========================================================================== -->
+    <section class="section" id="projects">
+      <div class="container">
+        <header class="section-header">
+          <div class="section-kicker">CLASSIFIED PORTFOLIO OPERATIONS</div>
+          <h2 class="section-title">Featured Combat Systems</h2>
+          <p class="section-subtitle">
+            Core gameplay systems and combat architectures engineered to match Call of Duty's signature fluidity, instantaneous responsiveness, and multiplayer fidelity.
+          </p>
+        </header>
+
+        <div class="projects-container">
+          <!-- Project 1: Deterministic Ballistics Engine -->
+          <article class="project-case-card tactical-frame">
+            <div class="corner-tl"></div><div class="corner-tr"></div>
+            <div class="corner-bl"></div><div class="corner-br"></div>
+
+            <div class="project-info-col">
+              <div class="project-status-tag">
+                <span class="live-dot"></span>
+                <span>STATUS: OPERATIONAL // DEPLOYED IN PROTOTYPE</span>
+              </div>
+              <h3 class="project-heading">Project ApexBallistics: Deterministic Combat &amp; Recoil Engine</h3>
+              <div class="project-target-spec">// TARGET: CALL OF DUTY WEAPONS &amp; BALLISTICS PIPELINE</div>
+              <p class="project-summary">
+                A custom C++ ballistics and recoil engine engineered for high-cadence first-person shooters. Replaces simplistic raycasts with continuous collision detection (CCD) sub-millimeter bullet trajectories, atmospheric drag, wind resistance, and multi-layer material penetration physics.
+              </p>
+
+              <ul class="feature-bullets-list">
+                <li class="feature-bullet-item">
+                  <span class="bullet-icon">▶</span>
+                  <span><strong>Deterministic Trajectory Integration:</strong> Implemented 4th-order Runge-Kutta (RK4) integration for perfectly reproducible bullet arcs across client and server.</span>
+                </li>
+                <li class="feature-bullet-item">
+                  <span class="bullet-icon">▶</span>
+                  <span><strong>Material Penetration System:</strong> Real-time raycast marching that computes material thickness, density coefficient, and calculates post-penetration velocity drop and trajectory deflection.</span>
+                </li>
+                <li class="feature-bullet-item">
+                  <span class="bullet-icon">▶</span>
+                  <span><strong>Zero Heap Allocations:</strong> Ring-buffered projectile memory pool maintaining steady 0ms garbage collection pauses even during 50-player simultaneous firefights.</span>
+                </li>
+              </ul>
+
+              <div class="tech-tags-list">
+                <span class="tech-pill highlight">C++20</span>
+                <span class="tech-pill highlight">RK4 Numerical Integration</span>
+                <span class="tech-pill">Memory Pool Pooling</span>
+                <span class="tech-pill">Material Penetration</span>
+                <span class="tech-pill">Unreal Engine 5</span>
+              </div>
+
+              <div class="project-links-row">
+                <a href="#code-vault" class="btn-tactical btn-tactical-outline">
+                  <span>INSPECT C++ IMPLEMENTATION</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="project-media-col">
+              <div class="project-image-box">
+                <img src="assets/ballistics-engine.jpg" alt="Tactical Gunsmith Ballistics Engineering Blueprint" width="1280" height="720">
+                <span class="project-image-tag">// SCHEMATIC: M4_BALLISTIC_MATRIX</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: NetSync 128 Multiplayer Netcode -->
+          <article class="project-case-card tactical-frame reverse">
+            <div class="corner-tl"></div><div class="corner-tr"></div>
+            <div class="corner-bl"></div><div class="corner-br"></div>
+
+            <div class="project-info-col">
+              <div class="project-status-tag">
+                <span class="live-dot" style="background:var(--hud-amber); box-shadow:0 0 8px var(--hud-amber);"></span>
+                <span style="color:var(--hud-amber);">STATUS: PRODUCTION READY // WARZONE SPEC</span>
+              </div>
+              <h3 class="project-heading">NetSync-128: Low-Latency Multiplayer Combat Architecture</h3>
+              <div class="project-target-spec">// TARGET: HIGH-TICKRATE DEDICATED MULTIPLAYER SERVERS</div>
+              <p class="project-summary">
+                A server-authoritative multiplayer netcode architecture supporting 128Hz tick rates with rollback client-side prediction and sub-frame lag-compensated hit validation. Guarantees that "what you shoot is what you hit," even with varying player latencies up to 250ms RTT.
+              </p>
+
+              <ul class="feature-bullets-list">
+                <li class="feature-bullet-item">
+                  <span class="bullet-icon">▶</span>
+                  <span><strong>Historical Rewind Hit Registration:</strong> Server maintains a rolling 32-snapshot circular buffer of player bounding capsules, rewinding targets to the exact millisecond of the shooter's local frame.</span>
+                </li>
+                <li class="feature-bullet-item">
+                  <span class="bullet-icon">▶</span>
+                  <span><strong>Client-Side Rollback &amp; Reconciliation:</strong> Smoothly reconciles mispredictions using hermite cubic splines to prevent visual snapping during server state corrections.</span>
+                </li>
+                <li class="feature-bullet-item">
+                  <span class="bullet-icon">▶</span>
+                  <span><strong>Bandwidth Quantization:</strong> Compact bit-packed network packets compressing position, rotation, and input bitmasks from 64 bytes down to 9 bytes per tick.</span>
+                </li>
+              </ul>
+
+              <div class="tech-tags-list">
+                <span class="tech-pill highlight">C++20</span>
+                <span class="tech-pill highlight">UDP Sockets</span>
+                <span class="tech-pill">Lag Compensation Rewind</span>
+                <span class="tech-pill">Bit-Packing Quantization</span>
+                <span class="tech-pill">Circular Ring Buffers</span>
+              </div>
+
+              <div class="project-links-row">
+                <a href="#code-vault" class="btn-tactical btn-tactical-outline">
+                  <span>VIEW ROLLBACK ARCHITECTURE</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="project-media-col">
+              <div class="project-image-box">
+                <img src="assets/network-architecture.jpg" alt="Tactical Multiplayer Netcode War Room Architecture" width="1280" height="720">
+                <span class="project-image-tag">// TELEMETRY: 128HZ_ROLLBACK_TIMELINE</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         C++ ARCHITECTURE & CODE VAULT
+         ========================================================================== -->
+    <section class="section" id="code-vault">
+      <div class="container">
+        <header class="section-header">
+          <div class="section-kicker">MISSION CODE SAMPLES</div>
+          <h2 class="section-title">C++ Combat Architecture Vault</h2>
+          <p class="section-subtitle">
+            Inspect production-grade C++ implementations demonstrating mathematical rigor, performance consciousness, and clean architecture suited for AAA game engines.
+          </p>
+        </header>
+
+        <div class="code-terminal-card tactical-frame">
+          <div class="corner-tl"></div><div class="corner-tr"></div>
+          <div class="corner-bl"></div><div class="corner-br"></div>
+
+          <!-- Terminal Tabs -->
+          <div class="terminal-header">
+            <div class="terminal-tabs">
+              <button type="button" class="terminal-tab active" data-snippet="recoil">
+                // RecoilSpringModel.cpp
+              </button>
+              <button type="button" class="terminal-tab" data-snippet="lagcomp">
+                // LagCompensationManager.cpp
+              </button>
+              <button type="button" class="terminal-tab" data-snippet="ballistics">
+                // BallisticsIntegrator.cpp
+              </button>
+            </div>
+
+            <div class="terminal-actions">
+              <button type="button" class="btn-copy-code" id="copyCodeBtn">
+                COPY SNIPPET
+              </button>
+            </div>
+          </div>
+
+          <!-- Code Display Body -->
+          <pre class="code-display-body"><code id="terminalCodeDisplay">// RecoilSpringModel.cpp - Damped Harmonic Recoil Kinetic Model
+// Architecture for Call of Duty style procedural gunplay
+#include "RecoilSpringModel.h"
+
+void URecoilSpringComponent::TickComponent(float DeltaTime)
+{
+    Super::TickComponent(DeltaTime);
+
+    // Apply 2nd order differential spring mechanics: d2x/dt2 = -k*x - c*v
+    const FVector SpringForce = -Stiffness * CurrentRecoilOffset;
+    const FVector DampingForce = -Damping * RecoilVelocity;
+    const FVector Acceleration = (SpringForce + DampingForce) / WeaponMass;
+
+    RecoilVelocity += Acceleration * DeltaTime;
+    CurrentRecoilOffset += RecoilVelocity * DeltaTime;
+
+    // Apply procedural weapon kick to First-Person Camera & Weapon Bone IK
+    if (APlayerCameraManager* Cam = GetPlayerCameraManager())
+    {
+        Cam->AddPitchInput(CurrentRecoilOffset.Y * CameraKickFactor);
+        Cam->AddYawInput(CurrentRecoilOffset.Z * CameraSwayFactor);
+    }
+}
+
+void URecoilSpringComponent::ApplyRecoilImpulse(const FRecoilImpulseConfig& Impulse)
+{
+    // High-cadence linear and angular kick injection
+    RecoilVelocity.X += Impulse.RearKickMetersPerSec;
+    RecoilVelocity.Y += Impulse.MuzzleRiseDegPerSec * FMath::FRandRange(0.85f, 1.15f);
+    RecoilVelocity.Z += Impulse.HorizontalClimbDegPerSec * FMath::FRandRange(-1.0f, 1.0f);
+}</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         COMBAT SERVICE RECORD / TIMELINE
+         ========================================================================== -->
+    <section class="section" id="service-record">
+      <div class="container">
+        <header class="section-header">
+          <div class="section-kicker">SERVICE DOSSIER</div>
+          <h2 class="section-title">Deployment &amp; Experience Record</h2>
+          <p class="section-subtitle">
+            Professional trajectory and combat engineering background focused on gameplay systems, physics, and multiplayer engineering.
+          </p>
+        </header>
+
+        <div class="timeline-container">
+          <!-- Item 1 -->
+          <div class="timeline-item">
+            <article class="timeline-card tactical-frame">
+              <div class="corner-tl"></div><div class="corner-tr"></div>
+              <div class="corner-bl"></div><div class="corner-br"></div>
+              <div class="timeline-date">// 2024 — PRESENT // ACTIVE OPERATION</div>
+              <h3 class="timeline-role">Lead Gameplay &amp; Combat Systems Engineer</h3>
+              <div class="timeline-company">TACTICAL SHOOTER STUDIOS // CORE COMBAT INITIATIVE</div>
+              <p class="timeline-desc">
+                Architecting core gunplay mechanics, procedural recoil springs, ADS transitions, and custom character movement state machines (slide-canceling, ledge mounting, tactical sprint). Collaborating directly with combat designers to tune the microsecond feel of weapon handling.
+              </p>
+            </article>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="timeline-item amber">
+            <article class="timeline-card tactical-frame">
+              <div class="corner-tl"></div><div class="corner-tr"></div>
+              <div class="corner-bl"></div><div class="corner-br"></div>
+              <div class="timeline-date">// 2022 — 2024 // MULTIPLAYER REPLICATION</div>
+              <h3 class="timeline-role">Multiplayer &amp; Systems Programmer</h3>
+              <div class="timeline-company">APEX NETWORK LABS</div>
+              <p class="timeline-desc">
+                Engineered server-side rollback netcode and lag compensation algorithms. Reduced bandwidth utilization by 42% through bit-level payload quantization and delta snapshot compression for 64-player dedicated servers.
+              </p>
+            </article>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="timeline-item">
+            <article class="timeline-card tactical-frame">
+              <div class="corner-tl"></div><div class="corner-tr"></div>
+              <div class="corner-bl"></div><div class="corner-br"></div>
+              <div class="timeline-date">// 2018 — 2022 // TECHNICAL FOUNDATION</div>
+              <h3 class="timeline-role">B.S. in Computer Science &amp; Game Engineering</h3>
+              <div class="timeline-company">UNIVERSITY OF ENGINEERING &amp; TECHNOLOGY</div>
+              <p class="timeline-desc">
+                Specialized in 3D Mathematics, Linear Algebra, Real-Time Physics Simulation, Game Engine Architecture, and Multi-Threaded Systems Programming. Graduated with Honors.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         TRANSMISSION TERMINAL / CONTACT
+         ========================================================================== -->
+    <section class="section" id="transmission">
+      <div class="container">
+        <header class="section-header">
+          <div class="section-kicker">SECURE COMMS TRANSMISSION</div>
+          <h2 class="section-title">Initiate Contact &amp; Recruitment</h2>
+          <p class="section-subtitle">
+            Direct communication link to Rohit Kshirsagar. Available for technical interviews, combat gameplay programming roles, and relocation for Call of Duty development teams.
+          </p>
+        </header>
+
+        <div class="transmission-layout">
+          <!-- Intel Channels Column -->
+          <div class="intel-info-col">
+            <a href="mailto:rohitkshirsagar@example.com" class="comms-channel-card tactical-frame" id="contactEmailLink">
+              <div class="corner-tl"></div><div class="corner-tr"></div>
+              <div class="corner-bl"></div><div class="corner-br"></div>
+              <div class="channel-icon">✉</div>
+              <div class="channel-details">
+                <span class="channel-label">TACTICAL COMMS EMAIL</span>
+                <span class="channel-val">rohitkshirsagar@example.com</span>
+              </div>
+            </a>
+
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="comms-channel-card tactical-frame" id="contactLinkedinLink">
+              <div class="corner-tl"></div><div class="corner-tr"></div>
+              <div class="corner-bl"></div><div class="corner-br"></div>
+              <div class="channel-icon">in</div>
+              <div class="channel-details">
+                <span class="channel-label">PROFESSIONAL INTEL (LINKEDIN)</span>
+                <span class="channel-val">linkedin.com/in/rohitkshirsagar</span>
+              </div>
+            </a>
+
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="comms-channel-card tactical-frame" id="contactGithubLink">
+              <div class="corner-tl"></div><div class="corner-tr"></div>
+              <div class="corner-bl"></div><div class="corner-br"></div>
+              <div class="channel-icon">⌥</div>
+              <div class="channel-details">
+                <span class="channel-label">CODE REPOSITORY (GITHUB)</span>
+                <span class="channel-val">github.com/rohitkshirsagar</span>
+              </div>
+            </a>
+
+            <div class="comms-channel-card tactical-frame amber-accent">
+              <div class="corner-tl"></div><div class="corner-tr"></div>
+              <div class="corner-bl"></div><div class="corner-br"></div>
+              <div class="channel-icon" style="color:var(--hud-amber);">★</div>
+              <div class="channel-details">
+                <span class="channel-label">DEPLOYMENT STATUS</span>
+                <span class="channel-val" style="color:var(--hud-amber);">READY FOR CALL OF DUTY RECRUITMENT</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Transmission Form -->
+          <div class="transmission-form-card tactical-frame">
+            <div class="corner-tl"></div><div class="corner-tr"></div>
+            <div class="corner-bl"></div><div class="corner-br"></div>
+
+            <form class="contact-form" id="transmissionForm">
+              <div class="form-group">
+                <label for="callerName" class="form-label">// RECRUITER / CALLSIGN NAME</label>
+                <input type="text" id="callerName" class="form-input" placeholder="e.g. Capt. Price / Activision Recruiter" required>
+              </div>
+
+              <div class="form-group">
+                <label for="callerStudio" class="form-label">// STUDIO / ORGANIZATION</label>
+                <input type="text" id="callerStudio" class="form-input" placeholder="e.g. Infinity Ward / Treyarch / Activision" required>
+              </div>
+
+              <div class="form-group">
+                <label for="missionType" class="form-label">// TRANSMISSION PURPOSE</label>
+                <select id="missionType" class="form-select">
+                  <option value="interview">Call of Duty Gameplay Programmer Interview</option>
+                  <option value="contract">Combat Mechanics Contract / Advisory</option>
+                  <option value="code_review">C++ Engine Architecture Discussion</option>
+                  <option value="general">General Recruitment Transmission</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="callerMessage" class="form-label">// MISSION TRANSMISSION INTEL</label>
+                <textarea id="callerMessage" class="form-textarea" placeholder="Detail role requirements, engine version, and interview scheduling..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn-tactical btn-tactical-primary">
+                DISPATCH ENCRYPTED TRANSMISSION ➔
+              </button>
+
+              <div class="form-feedback-overlay" id="transmissionFeedback">
+                ✓ TRANSMISSION DISPATCHED TO ROHIT KSHIRSAGAR. COMMS CHANNEL SECURED.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       HUD FOOTER
+       ========================================================================== -->
+  <footer class="hud-footer">
+    <div class="container footer-grid">
+      <div class="footer-copy">
+        ROHIT KSHIRSAGAR &copy; 2026 // GAMEPLAY &amp; COMBAT PROGRAMMER // PORTFOLIO
+      </div>
+      <div class="footer-disclaimer">
+        Call of Duty, Modern Warfare, and Warzone are registered trademarks of Activision Publishing, Inc. This portfolio is a non-commercial candidate demonstration portfolio showcasing gameplay engineering capabilities targeting Activision studios.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="js/main.js"></script>
+</body>
+</html>
