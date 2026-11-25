@@ -3,193 +3,116 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rohit Kshirsagar | Gameplay & Combat Programmer — Targeting Call of Duty</title>
-  <meta name="description" content="Official combat dossier and portfolio for Rohit Kshirsagar, Gameplay & Combat Programmer targeting Call of Duty (Infinity Ward, Treyarch, Sledgehammer Games). Specializing in C++, deterministic ballistics, weapon recoil kinetics, and 128-tick rollback netcode.">
-  <meta name="keywords" content="Rohit Kshirsagar, Call of Duty, Gameplay Programmer, Combat Programmer, C++, Game Development, Unreal Engine, Netcode, Ballistics, Recoil, Activision">
+  <title>Rohit Kshirsagar | Software Engineering & AI Portfolio</title>
+  <meta name="description" content="Engineering portfolio of Rohit Kshirsagar highlighting open-source contributions to S-AI-Projects/learn-python, full-stack LLM architectures, technical skills, and academic achievements.">
+  <meta name="keywords" content="Rohit Kshirsagar, Software Engineer, AI, Python, Open Source, S&AI, learn-python, Pull Requests">
   <meta name="author" content="Rohit Kshirsagar">
 
-  <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Rohit Kshirsagar | Gameplay & Combat Programmer — Targeting Call of Duty">
-  <meta property="og:description" content="Tactical combat mechanics, C++ ballistics simulation, and low-latency multiplayer architecture targeting Call of Duty studios.">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Rohit Kshirsagar | Software Engineering & AI Portfolio">
+  <meta property="og:description" content="Academic achievements, open-source pull requests on S-AI-Projects, verified skills, and technical projects.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/hero-bg.jpg">
+  <meta property="og:url" content="https://rohitkshirsagar08.github.io/portfolio/">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23ea6a32'/><text x='50%' y='55%' text-anchor='middle' fill='white' font-size='42' font-family='sans-serif' font-weight='bold' dy='.3em'>RK</text></svg>">
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- Background Overlays -->
-  <div class="hud-grid-overlay" aria-hidden="true"></div>
-  <div class="hud-scanlines" aria-hidden="true"></div>
-  <div class="radar-sweep-effect" aria-hidden="true"></div>
-
-  <!-- HUD Top Command Bar -->
-  <header class="hud-header" id="hudHeader">
-    <!-- Telemetry Strip -->
-    <div class="header-telemetry-strip">
-      <div class="telemetry-item">
-        <span class="live-dot"></span>
-        <span class="telemetry-tag">SYS_STATUS:</span> READY FOR DEPLOYMENT
-      </div>
-      <div class="telemetry-item">
-        <span class="telemetry-tag">TARGET_STUDIOS:</span> ACTIVISION // INFINITY WARD // TREYARCH // SLEDGEHAMMER
-      </div>
-      <div class="telemetry-item">
-        <span class="telemetry-tag">TIME_UTC:</span> <span id="militaryClock">2026.10.28 // 11:28:00 UTC</span>
-      </div>
-      <div class="telemetry-item">
-        <span class="telemetry-tag">NET_LATENCY:</span> <span id="telemetryPing">18ms</span>
-      </div>
-      <div class="telemetry-item">
-        <span class="telemetry-tag">TICKRATE:</span> 128.0 Hz
-      </div>
-    </div>
-
-    <!-- Main Navigation Bar -->
-    <div class="header-main-nav">
-      <a href="#hero" class="nav-brand" id="navBrandLogo">
-        <div class="brand-insignia">RK</div>
-        <div class="brand-info">
+  <!-- ==========================================================================
+       MAIN NAVIGATION BAR
+       ========================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-brand" aria-label="Rohit Kshirsagar Home">
+        <div class="brand-badge">RK</div>
+        <div>
           <span class="brand-name">Rohit Kshirsagar</span>
-          <span class="brand-title">TARGET: CALL OF DUTY COMBAT TEAM</span>
+          <span class="brand-title">Software &amp; AI Engineer</span>
         </div>
       </a>
 
-      <nav aria-label="Main Portfolio Navigation">
-        <ul class="nav-links">
-          <li><a href="#hero" class="nav-link"><span class="nav-prefix">//01</span> Dossier</a></li>
-          <li><a href="#loadout" class="nav-link"><span class="nav-prefix">//02</span> Arsenal</a></li>
-          <li><a href="#simulator" class="nav-link"><span class="nav-prefix">//03</span> Ballistics Lab</a></li>
-          <li><a href="#projects" class="nav-link"><span class="nav-prefix">//04</span> Black Ops</a></li>
-          <li><a href="#code-vault" class="nav-link"><span class="nav-prefix">//05</span> C++ Architecture</a></li>
-          <li><a href="#service-record" class="nav-link"><span class="nav-prefix">//06</span> Record</a></li>
-          <li><a href="#transmission" class="nav-link"><span class="nav-prefix">//07</span> Contact</a></li>
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contributions">S&amp;AI Contributions</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#education">Education &amp; Achievements</a></li>
+          <li><a href="#contact" class="nav-cta-btn">Contact</a></li>
         </ul>
       </nav>
 
-      <div class="hud-controls">
-        <button type="button" class="btn-hud-control active" id="toggleAudioBtn" title="Toggle Tactical Audio Effects">
-          SFX: LIVE
-        </button>
-        <button type="button" class="btn-hud-control" id="toggleNvgBtn" title="Toggle Night Vision Optic Mode">
-          NVG: OPTIC
-        </button>
-        <button type="button" class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Navigation Menu">
-          ☰
-        </button>
-      </div>
+      <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
+        ☰
+      </button>
     </div>
   </header>
 
   <main>
     <!-- ==========================================================================
-         HERO SECTION: OPERATOR BRIEFING & TARGET ROLE
+         HERO SECTION: SUMMARY & CANDIDATE PROFILE
          ========================================================================== -->
     <section class="hero-section" id="hero">
-      <img src="assets/hero-bg.jpg" alt="Call of Duty Tactical Combat Environment" class="hero-backdrop-image" width="1920" height="1080">
-      
       <div class="container hero-grid">
-        <div class="hero-mission-dossier">
-          <!-- Clearance Tag -->
-          <div class="dossier-clearance-bar">
-            <span class="classification-stamp">CLASSIFIED // LEVEL 4</span>
-            <span>CALLSIGN: VORTEX</span>
-            <span>// DEPLOYMENT: IMMEDIATE</span>
+        <div class="hero-text-content">
+          <div class="hero-badge-pill">
+            <span class="pulse-dot"></span>
+            <span>Available for Software Engineering &amp; AI Internships</span>
           </div>
-
-          <!-- Operator Name & Target Role -->
-          <div class="operator-name-badge">
-            <span class="hero-name-label">// CANDIDATE DOSSIER</span>
-            <h1 class="hero-operator-name">Rohit Kshirsagar</h1>
-            <div class="hero-operator-role">
-              Gameplay &amp; Combat Programmer
-              <span class="role-target-tag">TARGETING: CALL OF DUTY</span>
-            </div>
+          <h1 class="hero-title">
+            Engineering robust systems &amp; <span class="hero-highlight">intelligent software</span>
+          </h1>
+          <div class="hero-subtitle">
+            B.Tech Computer Science &amp; Engineering Student // Open-Source Contributor
           </div>
-
-          <!-- Tactical Mission Briefing -->
-          <div class="hero-mission-briefing tactical-frame">
-            <div class="corner-tl"></div><div class="corner-tr"></div>
-            <div class="corner-bl"></div><div class="corner-br"></div>
-            <div class="briefing-heading">// PRIMARY MISSION OBJECTIVE</div>
-            <p class="briefing-text">
-              Engineering high-cadence, visceral combat mechanics for the next generation of <span class="briefing-highlight">Call of Duty: Modern Warfare &amp; Warzone</span>. Architecting sub-millimeter deterministic ballistics, procedural recoil spring kinetics, responsive first-person camera feel, and 128-tick rollback multiplayer netcode.
-            </p>
-          </div>
-
-          <!-- Real-Time Combat Specs -->
-          <div class="hero-stats-row">
-            <div class="stat-box">
-              <div class="stat-value">C++20</div>
-              <div class="stat-label">Core Engine Language</div>
-            </div>
-            <div class="stat-box">
-              <div class="stat-value">128 HZ</div>
-              <div class="stat-label">Multiplayer Tickrate Target</div>
-            </div>
-            <div class="stat-box">
-              <div class="stat-value">&lt; 0.5 ms</div>
-              <div class="stat-label">Per-Frame Combat Budget</div>
-            </div>
-          </div>
-
-          <!-- Action Buttons -->
-          <div class="hero-actions">
-            <a href="#projects" class="btn-tactical btn-tactical-primary" id="heroViewProjectsBtn">
-              <span>EXPLORE BLACK OPS PROJECTS</span> ➔
+          <p class="hero-bio">
+            Passionate software engineer focused on Python internals, regression test automation, high-performance web systems, and LLM orchestration. Proven record of rigorous open-source contributions across 10 verified pull requests in the <strong>S-AI-Projects/learn-python</strong> repository.
+          </p>
+          <div class="hero-action-group">
+            <a href="#contributions" class="btn-primary">
+              <span>View 10 S&amp;AI Pull Requests</span> ➔
             </a>
-            <a href="#simulator" class="btn-tactical btn-tactical-outline" id="heroTestLabBtn">
-              <span>TEST RECOIL SIMULATOR</span> ⚡
+            <a href="#projects" class="btn-outline">
+              <span>Explore Projects</span>
             </a>
-            <a href="#transmission" class="btn-tactical btn-tactical-amber" id="heroContactBtn">
-              <span>INITIATE CONTACT</span> 📡
+            <a href="https://github.com/rohitkshirsagar08" target="_blank" rel="noopener noreferrer" class="btn-outline">
+              <span>GitHub Profile</span> ↗
             </a>
           </div>
         </div>
 
-        <!-- Operator Dossier Identity Card -->
-        <aside class="operator-id-card tactical-frame" aria-label="Candidate Identification Card">
-          <div class="corner-tl"></div><div class="corner-tr"></div>
-          <div class="corner-bl"></div><div class="corner-br"></div>
-
-          <div class="card-top-bar">
-            <span class="card-title">// OPERATOR CREDENTIALS</span>
-            <span class="card-serial">ID: RK-COD-2026</span>
+        <!-- Candidate Overview Card -->
+        <aside class="profile-card" aria-label="Candidate Overview">
+          <div class="profile-avatar-wrapper">
+            <img src="assets/operator-avatar.jpg" alt="Rohit Kshirsagar Profile" class="profile-avatar" onerror="this.src='https://avatars.githubusercontent.com/u/321794093?v=4'">
           </div>
+          <h2 class="profile-name">Rohit Kshirsagar</h2>
+          <p class="profile-tagline">Undergraduate Software &amp; AI Developer</p>
 
-          <div class="operator-portrait-wrapper">
-            <img src="assets/operator-avatar.jpg" alt="Rohit Kshirsagar Tactical Dossier Avatar" class="operator-portrait" width="600" height="600">
-            <div class="reticle-overlay"></div>
-          </div>
-
-          <div class="card-spec-list">
-            <div class="spec-entry">
-              <span class="spec-label">OPERATOR NAME:</span>
-              <span class="spec-val">ROHIT KSHIRSAGAR</span>
+          <div class="profile-info-list">
+            <div class="info-item">
+              <span class="info-label">Degree:</span>
+              <span class="info-val">B.Tech Computer Science &amp; Engg.</span>
             </div>
-            <div class="spec-entry">
-              <span class="spec-label">TARGET STUDIO:</span>
-              <span class="spec-val amber">ACTIVISION / COD STUDIOS</span>
+            <div class="info-item">
+              <span class="info-label">Academic Year:</span>
+              <span class="info-val">1st Year (Semester 1)</span>
             </div>
-            <div class="spec-entry">
-              <span class="spec-label">DISCIPLINE:</span>
-              <span class="spec-val green">GAMEPLAY &amp; COMBAT ENGINEERING</span>
+            <div class="info-item">
+              <span class="info-label">GitHub Account:</span>
+              <a href="https://github.com/rohitkshirsagar08" target="_blank" rel="noopener noreferrer" class="info-val" style="color: var(--orange-600);">@rohitkshirsagar08</a>
             </div>
-            <div class="spec-entry">
-              <span class="spec-label">PRIMARY WEAPON:</span>
-              <span class="spec-val">C++20 / UNREAL ENGINE 5</span>
+            <div class="info-item">
+              <span class="info-label">S&amp;AI Pull Requests:</span>
+              <span class="info-val badge-green">10 / 10 Completed</span>
             </div>
-            <div class="spec-entry">
-              <span class="spec-label">PHYSICS &amp; REPLICATION:</span>
-              <span class="spec-val green">DETERMINISTIC SIM / ROLLBACK</span>
-            </div>
-            <div class="spec-entry">
-              <span class="spec-label">LOCATION &amp; MOBILITY:</span>
-              <span class="spec-val">WORLDWIDE RELOCATION READY</span>
+            <div class="info-item">
+              <span class="info-label">Target Roles:</span>
+              <span class="info-val">Software Engineer / AI Systems</span>
             </div>
           </div>
         </aside>
@@ -197,299 +120,206 @@
     </section>
 
     <!-- ==========================================================================
-         LOADOUT ARSENAL / TECHNICAL WEAPONS SECTION
+         SECTION 1: ABOUT ME (1 Mark)
+         Concise paragraph detailing degree program, current academic year,
+         areas of technical focus, and professional objectives.
          ========================================================================== -->
-    <section class="section" id="loadout">
+    <section class="section section-alt" id="about">
       <div class="container">
-        <header class="section-header">
-          <div class="section-kicker">TECHNICAL ARSENAL</div>
-          <h2 class="section-title">Gunsmith Class Loadout</h2>
-          <p class="section-subtitle">
-            Curated engineering stack honed for high-performance AAA combat design, zero-allocation game loops, and responsive gunplay kinetics.
-          </p>
-        </header>
+        <div class="section-header">
+          <div class="section-pill">Section 01 // Overview</div>
+          <h2 class="section-title">About Me</h2>
+          <p class="section-description">Academic background, technical focus areas, and career objectives.</p>
+        </div>
 
-        <div class="loadout-grid">
-          <!-- Primary Slot -->
-          <article class="loadout-slot-card tactical-frame">
-            <div class="corner-tl"></div><div class="corner-tr"></div>
-            <div class="corner-bl"></div><div class="corner-br"></div>
-            <div class="slot-header">
-              <span class="slot-tag">PRIMARY WEAPON // ARCHITECTURE</span>
-              <span class="slot-tier">TIER 1</span>
-            </div>
-            <h3 class="slot-title">C++20 &amp; Engine Systems</h3>
-            <p class="slot-description">
-              High-performance systems programming with explicit memory management, SIMD vectorization, cache-coherent data layout (ECS), and lock-free thread queues.
+        <div class="about-grid">
+          <div class="about-narrative calm-card">
+            <p class="about-p">
+              I am a first-year undergraduate student in Semester 1 pursuing my <strong>Bachelor of Technology (B.Tech) in Computer Science and Engineering</strong>. My academic trajectory and hands-on practice are centered on system architecture, test-driven engineering, compiler and runtime behaviors, and modern artificial intelligence application pipelines.
             </p>
-            <div class="tech-tags-list">
-              <span class="tech-pill highlight">C++20</span>
-              <span class="tech-pill highlight">Custom Memory Pools</span>
-              <span class="tech-pill">SIMD Intrinsics</span>
-              <span class="tech-pill">Multi-Threading / Tasks</span>
-              <span class="tech-pill">Cache Coherency (DOD)</span>
-              <span class="tech-pill">Bitwise Packing</span>
-            </div>
-            <div class="slot-telemetry">
-              <div class="telemetry-row">
-                <span class="telemetry-key">ALLOCATION BUDGET:</span>
-                <span class="telemetry-val">0 bytes / frame</span>
-              </div>
-              <div class="telemetry-row">
-                <span class="telemetry-key">COMPILER TARGET:</span>
-                <span class="telemetry-val">MSVC / Clang</span>
-              </div>
-            </div>
-          </article>
+            <p class="about-p">
+              My technical areas of focus include <strong>Python runtime internals</strong>, deterministic testing frameworks with <code>pytest</code>, full-stack web applications, and low-latency LLM user experiences. Through my contributions to the open-source <strong>S-AI-Projects/learn-python</strong> codebase, I have specialized in edge-case boundary verification, regression test construction, and API contract hardening.
+            </p>
+            <p class="about-p">
+              My immediate professional objective is to secure a <strong>Software Engineering or AI Systems Internship / New Grad role</strong> where I can apply rigorous software validation principles, build high-cadence production software, and contribute to mission-critical infrastructure.
+            </p>
 
-          <!-- Secondary Slot -->
-          <article class="loadout-slot-card tactical-frame">
-            <div class="corner-tl"></div><div class="corner-tr"></div>
-            <div class="corner-bl"></div><div class="corner-br"></div>
-            <div class="slot-header">
-              <span class="slot-tag">SECONDARY WEAPON // GUNPLAY FEEL</span>
-              <span class="slot-tier">TIER 1</span>
-            </div>
-            <h3 class="slot-title">Combat &amp; Gunplay Kinetics</h3>
-            <p class="slot-description">
-              Procedural recoil curves, spring-mass dampening models, dynamic aiming down sights (ADS) interpolation, optic parallax, and weapon obstacle collision.
-            </p>
-            <div class="tech-tags-list">
-              <span class="tech-pill highlight">Procedural Recoil Springs</span>
-              <span class="tech-pill highlight">Ballistics Trajectory</span>
-              <span class="tech-pill">Inverse Kinematics (IK)</span>
-              <span class="tech-pill">Weapon Sway &amp; Breathing</span>
-              <span class="tech-pill">Material Penetration</span>
-              <span class="tech-pill">First-Person Camera Feel</span>
-            </div>
-            <div class="slot-telemetry">
-              <div class="telemetry-row">
-                <span class="telemetry-key">RESPONSE LATENCY:</span>
-                <span class="telemetry-val">&lt; 8.33 ms (120fps)</span>
+            <div class="about-highlights">
+              <div class="highlight-box">
+                <div class="highlight-num">10</div>
+                <div class="highlight-label">S&amp;AI Pull Requests</div>
               </div>
-              <div class="telemetry-row">
-                <span class="telemetry-key">INTEGRATION MODEL:</span>
-                <span class="telemetry-val">Verlet / RK4</span>
+              <div class="highlight-box">
+                <div class="highlight-num">1st</div>
+                <div class="highlight-label">Year Sem 1 CSE</div>
+              </div>
+              <div class="highlight-box">
+                <div class="highlight-num">100%</div>
+                <div class="highlight-label">Test Automation Pass</div>
               </div>
             </div>
-          </article>
+          </div>
 
-          <!-- Tactical Slot -->
-          <article class="loadout-slot-card tactical-frame">
-            <div class="corner-tl"></div><div class="corner-tr"></div>
-            <div class="corner-bl"></div><div class="corner-br"></div>
-            <div class="slot-header">
-              <span class="slot-tag">TACTICAL // NETWORKING</span>
-              <span class="slot-tier">TIER 1</span>
-            </div>
-            <h3 class="slot-title">128-Tick Rollback Netcode</h3>
-            <p class="slot-description">
-              Multiplayer combat replication, client-side input prediction, server-authoritative reconciliation, historical lag compensation hit validation, and snapshot compression.
-            </p>
-            <div class="tech-tags-list">
-              <span class="tech-pill highlight">Client-Side Prediction</span>
-              <span class="tech-pill highlight">Lag Compensation Rewind</span>
-              <span class="tech-pill">Ring Buffer Snapshots</span>
-              <span class="tech-pill">UDP Sockets / Reliable Layer</span>
-              <span class="tech-pill">Delta Compression</span>
-              <span class="tech-pill">Jitter Buffering</span>
-            </div>
-            <div class="slot-telemetry">
-              <div class="telemetry-row">
-                <span class="telemetry-key">SERVER TICK:</span>
-                <span class="telemetry-val">128 Hz Dedicated</span>
-              </div>
-              <div class="telemetry-row">
-                <span class="telemetry-key">REWIND WINDOW:</span>
-                <span class="telemetry-val">Up to 250 ms RTT</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Lethal Slot -->
-          <article class="loadout-slot-card tactical-frame">
-            <div class="corner-tl"></div><div class="corner-tr"></div>
-            <div class="corner-bl"></div><div class="corner-br"></div>
-            <div class="slot-header">
-              <span class="slot-tag">LETHAL // ENGINES &amp; GRAPHICS</span>
-              <span class="slot-tier">TIER 1</span>
-            </div>
-            <h3 class="slot-title">Unreal Engine 5 &amp; Custom Engines</h3>
-            <p class="slot-description">
-              Deep mastery of Unreal Engine 5 source, Gameplay Ability System (GAS), Chaos Physics integration, custom animation nodes, and DirectX 12 / HLSL shader hooks.
-            </p>
-            <div class="tech-tags-list">
-              <span class="tech-pill highlight">UE5 Source Modifications</span>
-              <span class="tech-pill highlight">Gameplay Ability System</span>
-              <span class="tech-pill">Chaos Physics / Sub-stepping</span>
-              <span class="tech-pill">Animation State Machines</span>
-              <span class="tech-pill">Custom Engine Architecture</span>
-              <span class="tech-pill">HLSL / Compute Shaders</span>
-            </div>
-            <div class="slot-telemetry">
-              <div class="telemetry-row">
-                <span class="telemetry-key">ENGINE HOOKS:</span>
-                <span class="telemetry-val">Native C++ Subsystems</span>
-              </div>
-              <div class="telemetry-row">
-                <span class="telemetry-key">PHYSICS DISPATCH:</span>
-                <span class="telemetry-val">Fixed Sub-step 120Hz</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Perks Slot -->
-          <article class="loadout-slot-card tactical-frame">
-            <div class="corner-tl"></div><div class="corner-tr"></div>
-            <div class="corner-bl"></div><div class="corner-br"></div>
-            <div class="slot-header">
-              <span class="slot-tag">PERK 1 // PROFILING &amp; OPTIMIZATION</span>
-              <span class="slot-tier">SPECIALIST</span>
-            </div>
-            <h3 class="slot-title">Deep Profiling &amp; Diagnostics</h3>
-            <p class="slot-description">
-              Rigorous profiling for microsecond frame budgets, bottleneck isolation, cache miss reduction, memory leak eradication, and GPU/CPU synchronization.
-            </p>
-            <div class="tech-tags-list">
-              <span class="tech-pill highlight">RenderDoc</span>
-              <span class="tech-pill highlight">Tracy Profiler</span>
-              <span class="tech-pill">Unreal Insights</span>
-              <span class="tech-pill">PIX for Windows</span>
-              <span class="tech-pill">AddressSanitizer (ASan)</span>
-              <span class="tech-pill">VTune Amplifier</span>
-            </div>
-            <div class="slot-telemetry">
-              <div class="telemetry-row">
-                <span class="telemetry-key">PROFILING TARGET:</span>
-                <span class="telemetry-val">Sub-millisecond Spikes</span>
-              </div>
-              <div class="telemetry-row">
-                <span class="telemetry-key">MEMORY AUDIT:</span>
-                <span class="telemetry-val">Leak &amp; Truncation Free</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Field Upgrade Slot -->
-          <article class="loadout-slot-card tactical-frame">
-            <div class="corner-tl"></div><div class="corner-tr"></div>
-            <div class="corner-bl"></div><div class="corner-br"></div>
-            <div class="slot-header">
-              <span class="slot-tag">PERK 2 // PRODUCTION PIPELINE</span>
-              <span class="slot-tier">SPECIALIST</span>
-            </div>
-            <h3 class="slot-title">Studio Workflow &amp; Tools</h3>
-            <p class="slot-description">
-              AAA studio collaboration tooling, branch management across multi-site studios, automated unit/integration tests for combat systems, and continuous delivery.
-            </p>
-            <div class="tech-tags-list">
-              <span class="tech-pill highlight">Perforce (Helix Core)</span>
-              <span class="tech-pill highlight">Git / Git LFS</span>
-              <span class="tech-pill">Visual Studio 2022 / Rider</span>
-              <span class="tech-pill">CMake / UBT</span>
-              <span class="tech-pill">Python Pipeline Scripting</span>
-              <span class="tech-pill">Combat Unit Testing</span>
-            </div>
-            <div class="slot-telemetry">
-              <div class="telemetry-row">
-                <span class="telemetry-key">VERSION CONTROL:</span>
-                <span class="telemetry-val">Perforce / Git LFS</span>
-              </div>
-              <div class="telemetry-row">
-                <span class="telemetry-key">INTEGRATION:</span>
-                <span class="telemetry-val">Automated Test Suites</span>
-              </div>
-            </div>
-          </article>
+          <div class="about-focus-card">
+            <h4>🎯 Core Engineering Priorities</h4>
+            <ul class="focus-list">
+              <li>
+                <span class="focus-bullet">✦</span>
+                <div>
+                  <strong>Deterministic Testing &amp; Mutation Analysis:</strong> Designing invariant test suites and mutation-resistant regression suites that catch real-world off-by-one errors.
+                </div>
+              </li>
+              <li>
+                <span class="focus-bullet">✦</span>
+                <div>
+                  <strong>Runtime Complexity &amp; Profiling:</strong> Conducting empirical O(1) versus O(N) access complexity benchmarks and memory boundary validations.
+                </div>
+              </li>
+              <li>
+                <span class="focus-bullet">✦</span>
+                <div>
+                  <strong>AI &amp; LLM Interactive Tooling:</strong> Designing high-speed developer playgrounds and interactive token probability visualizers using modern frameworks.
+                </div>
+              </li>
+              <li>
+                <span class="focus-bullet">✦</span>
+                <div>
+                  <strong>Clean API Contracts:</strong> Documenting explicit zero-mutation, no-I/O contracts to keep shared modules maintainable and leak-free.
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ==========================================================================
-         INTERACTIVE BALLISTICS & RECOIL PROVING GROUNDS
+         SECTION 2: SKILLS (1.5 Marks)
+         Categorized technical skills linking directly to project code / PRs.
          ========================================================================== -->
-    <section class="section" id="simulator">
+    <section class="section" id="skills">
       <div class="container">
-        <header class="section-header">
-          <div class="section-kicker">LIVE COMBAT ENGINE SIMULATION</div>
-          <h2 class="section-title">Ballistics &amp; Recoil Proving Ground</h2>
-          <p class="section-subtitle">
-            Interactive firing range running a live 2nd-order damped harmonic spring simulation. Test weapon kick, cyclic rate, dispersion cones, and spring recovery in real-time.
+        <div class="section-header">
+          <div class="section-pill">Section 02 // Core Competencies</div>
+          <h2 class="section-title">Technical Skills &amp; Applied Evidence</h2>
+          <p class="section-description">
+            Categorized technical capabilities. Every skill is substantiated by direct hyperlinks to submitted pull requests or open-source repository code demonstrating hands-on experience.
           </p>
-        </header>
+        </div>
 
-        <div class="simulator-panel tactical-frame">
-          <div class="corner-tl"></div><div class="corner-tr"></div>
-          <div class="corner-bl"></div><div class="corner-br"></div>
-
-          <!-- Canvas Firing Range -->
-          <div class="canvas-viewport-container">
-            <canvas id="recoilCanvas" width="800" height="480"></canvas>
-
-            <!-- Real-time Canvas HUD Overlay -->
-            <div class="canvas-hud-overlay">
-              <div class="hud-group">
-                <span>SHOTS FIRED: <span class="hud-readout-val" id="simShotsFired">0</span></span>
-                <span>RECOIL (X, Y): <span class="hud-readout-val amber" id="simRecoilOffset">0.0, 0.0</span></span>
-              </div>
-              <div class="hud-group">
-                <span>MUZZLE CLIMB: <span class="hud-readout-val" id="simMuzzleClimb">0%</span></span>
-                <span>SPRING DAMPING: <span class="hud-readout-val amber">CRITICAL (ζ=1.0)</span></span>
-              </div>
+        <div class="skills-grid">
+          <!-- Category 1: Languages & Runtime Internals -->
+          <div class="skill-category-card">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon">⚡</div>
+              <h3 class="skill-cat-title">Languages &amp; Runtimes</h3>
             </div>
+            <div class="skill-items">
+              <div class="skill-item">
+                <div class="skill-item-top">
+                  <span class="skill-name">Python 3.x (Core Internals)</span>
+                  <a href="https://github.com/S-AI-Projects/learn-python/pull/98" target="_blank" rel="noopener noreferrer" class="skill-evidence-link">Evidence: PR #98 ↗</a>
+                </div>
+                <div class="skill-desc">
+                  Data model execution, class <code>__dict__</code> lookup resolution, fallback semantics, and docstring cleanups via <code>inspect.cleandoc</code>.
+                </div>
+              </div>
 
-            <div class="canvas-action-bar">
-              <button type="button" class="fire-trigger-btn" id="fireTriggerBtn">
-                💥 HOLD TO FIRE (TEST COMBAT FEEL)
-              </button>
-              <button type="button" class="btn-hud-control" id="resetRangeBtn">
-                RESET TARGET
-              </button>
+              <div class="skill-item">
+                <div class="skill-item-top">
+                  <span class="skill-name">TypeScript / JavaScript</span>
+                  <a href="https://github.com/rohitkshirsagar08/perplexity-explorer" target="_blank" rel="noopener noreferrer" class="skill-evidence-link">Evidence: Repo ↗</a>
+                </div>
+                <div class="skill-desc">
+                  Strict type safety, reactive component state architectures, and asynchronous token processing for interactive educational tools.
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-item-top">
+                  <span class="skill-name">C++ &amp; Deterministic Systems</span>
+                  <a href="https://github.com/rohitkshirsagar08/portfolio" target="_blank" rel="noopener noreferrer" class="skill-evidence-link">Evidence: Repo ↗</a>
+                </div>
+                <div class="skill-desc">
+                  Low-level deterministic physics, Euler spring integration, and sub-millimeter trajectory calculations.
+                </div>
+              </div>
             </div>
           </div>
 
-          <!-- Simulator Control Sidebar -->
-          <div class="sim-controls-sidebar">
-            <div class="control-panel-group">
-              <span class="control-label">// SELECT WEAPON PROFILE</span>
-              <div class="weapon-select-grid">
-                <button type="button" class="weapon-btn active" data-weapon="m4">
-                  <span>M4A1 ASSAULT RIFLE</span>
-                  <span style="color:var(--hud-green)">750 RPM</span>
-                </button>
-                <button type="button" class="weapon-btn" data-weapon="smg">
-                  <span>LACHMANN SUB (MP5)</span>
-                  <span style="color:var(--hud-amber)">900 RPM</span>
-                </button>
-                <button type="button" class="weapon-btn" data-weapon="sniper">
-                  <span>VICTUS XMR .50 CAL</span>
-                  <span style="color:var(--hud-cyan)">BOLT ACTION</span>
-                </button>
-              </div>
+          <!-- Category 2: Testing, Quality & Test Automation -->
+          <div class="skill-category-card">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon">🧪</div>
+              <h3 class="skill-cat-title">Testing &amp; QA Automation</h3>
             </div>
-
-            <div class="control-panel-group">
-              <span class="control-label">// PHYSICS FORMULA IN REALTIME</span>
-              <div class="sim-code-preview">
-// Damped Harmonic Oscillator:
-F_spring = -k * Offset;
-F_damping = -c * Velocity;
-Accel = (F_spring + F_damping) / Mass;
-Velocity += Accel * DeltaTime;
-Offset += Velocity * DeltaTime;
-              </div>
-            </div>
-
-            <div class="control-panel-group">
-              <span class="control-label">// TELEMETRY DIAGNOSTICS</span>
-              <div class="slot-telemetry">
-                <div class="telemetry-row">
-                  <span class="telemetry-key">OPTIC PARALLAX:</span>
-                  <span class="telemetry-val">ACTIVE</span>
+            <div class="skill-items">
+              <div class="skill-item">
+                <div class="skill-item-top">
+                  <span class="skill-name">Pytest &amp; Automated Test Suites</span>
+                  <a href="https://github.com/S-AI-Projects/learn-python/pull/78" target="_blank" rel="noopener noreferrer" class="skill-evidence-link">Evidence: PR #78 ↗</a>
                 </div>
-                <div class="telemetry-row">
-                  <span class="telemetry-key">DISPERSION MOA:</span>
-                  <span class="telemetry-val">1.2 MOA</span>
+                <div class="skill-desc">
+                  Constructing reproducible regression suites, modular fixtures, runner scripts, and automated exit-code verifications.
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-item-top">
+                  <span class="skill-name">Mutation Testing &amp; Regressions</span>
+                  <a href="https://github.com/S-AI-Projects/learn-python/pull/100" target="_blank" rel="noopener noreferrer" class="skill-evidence-link">Evidence: PR #100 ↗</a>
+                </div>
+                <div class="skill-desc">
+                  Validating test suite effectiveness against artificial code mutations (e.g. index off-by-one errors) to guarantee high test sensitivity.
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-item-top">
+                  <span class="skill-name">Boundary &amp; Complexity Profiling</span>
+                  <a href="https://github.com/S-AI-Projects/learn-python/pull/99" target="_blank" rel="noopener noreferrer" class="skill-evidence-link">Evidence: PR #99 ↗</a>
+                </div>
+                <div class="skill-desc">
+                  Empirical timing analysis using <code>timeit</code> over scales N=16 to 65536, proving constant-time O(1) tuple access.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 3: Standard Libraries, Formats & Compression -->
+          <div class="skill-category-card">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon">📦</div>
+              <h3 class="skill-cat-title">Libraries &amp; Algorithms</h3>
+            </div>
+            <div class="skill-items">
+              <div class="skill-item">
+                <div class="skill-item-top">
+                  <span class="skill-name">Data Compression &amp; Zlib</span>
+                  <a href="https://github.com/S-AI-Projects/learn-python/pull/79" target="_blank" rel="noopener noreferrer" class="skill-evidence-link">Evidence: PR #79 ↗</a>
+                </div>
+                <div class="skill-desc">
+                  Input boundary testing on empty byte sequences, neighboring single-byte compression, and independent CRC-32 validation.
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-item-top">
+                  <span class="skill-name">Regular Expressions (re) &amp; Text</span>
+                  <a href="https://github.com/S-AI-Projects/learn-python/pull/93" target="_blank" rel="noopener noreferrer" class="skill-evidence-link">Evidence: PR #93 ↗</a>
+                </div>
+                <div class="skill-desc">
+                  Reference comparison testing of <code>re.findall</code> against deterministic non-regex tokenizers over 21 distinct ASCII inputs.
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-item-top">
+                  <span class="skill-name">Stream I/O &amp; Doctest</span>
+                  <a href="https://github.com/S-AI-Projects/learn-python/pull/97" target="_blank" rel="noopener noreferrer" class="skill-evidence-link">Evidence: PR #97 ↗</a>
+                </div>
+                <div class="skill-desc">
+                  Executable docstring tests using <code>io.StringIO</code> verifying stream offset advances across <code>seek()</code> and <code>read()</code>.
                 </div>
               </div>
             </div>
@@ -499,124 +329,497 @@ Offset += Velocity * DeltaTime;
     </section>
 
     <!-- ==========================================================================
-         FEATURED BLACK OPS / PROJECTS
+         SECTION 3: S&AI OPEN-SOURCE CONTRIBUTIONS (3 Marks)
+         Repository name, direct links to all 10 PRs, Task IDs,
+         code modifications description, and technical rationales.
+         ========================================================================== -->
+    <section class="section section-alt" id="contributions">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-pill">Section 03 // Open-Source Contributions</div>
+          <h2 class="section-title">S&amp;AI Open-Source Contributions</h2>
+          <p class="section-description">
+            Complete breakdown of all <strong>10 individual project tasks</strong> contributed to the official course repository. Each entry specifies the Task ID, code modifications, technical rationale, and a direct working link to the verified GitHub Pull Request.
+          </p>
+        </div>
+
+        <!-- Repository Announcement Banner -->
+        <div class="repo-summary-banner">
+          <div class="repo-info-block">
+            <div class="repo-icon-badge">🐍</div>
+            <div>
+              <div class="repo-heading">Target Repository: S-AI-Projects / learn-python</div>
+              <div class="repo-subtext">Upstream: <code>https://github.com/S-AI-Projects/learn-python</code> // Contributor: <code>@rohitkshirsagar08</code></div>
+            </div>
+          </div>
+          <a href="https://github.com/S-AI-Projects/learn-python/pulls?q=is%3Apr+author%3Arohitkshirsagar08" target="_blank" rel="noopener noreferrer" class="repo-link-btn">
+            View All 10 PRs on GitHub ↗
+          </a>
+        </div>
+
+        <!-- The 10 Separate Tasks -->
+        <div class="tasks-container">
+
+          <!-- Task 1: R30-T041 -->
+          <article class="task-card" id="task-r30-t041">
+            <div class="task-card-header">
+              <div>
+                <span class="task-id-badge">Task 01 // R30-T041</span>
+                <h3 class="task-title">Add AIF Reader Contract Tests</h3>
+              </div>
+              <a href="https://github.com/S-AI-Projects/learn-python/pull/78" target="_blank" rel="noopener noreferrer" class="task-pr-action">
+                Inspect PR #78 on GitHub ↗
+              </a>
+            </div>
+            <div class="task-body-grid">
+              <div class="task-pane">
+                <div class="task-pane-label">🛠️ Code Modifications</div>
+                <p class="task-pane-text">
+                  Added focused regression tests in <code>test_aif.py</code> for the <code>aif_read</code> format handler. Tested single and repeated zero-argument invocations to verify identical deterministic output without state leakage. Documented the explicit no-I/O and zero-mutation return contract directly beside the implementation, accompanied by a dedicated runner script (<code>check.py</code>) and captured test evidence (<code>evidence.txt</code>).
+                </p>
+              </div>
+              <div class="task-pane">
+                <div class="task-pane-label">💡 Technical Rationale</div>
+                <p class="task-pane-text">
+                  Sound format decoders in modular Python libraries often carry implicit assumptions about caller-owned buffers or file handles. Formalizing the contract guaranteed that <code>aif_read</code> remains completely pure and side-effect free, preventing subtle regression bugs when other sound formats are added to the package.
+                </p>
+              </div>
+            </div>
+            <div class="task-meta-row">
+              <div class="task-meta-tags">
+                <span class="task-tag">File: formats/test_aif.py</span>
+                <span class="task-tag">+165 / -1 lines</span>
+                <span class="task-tag">Branch: student/e26b07f0835</span>
+              </div>
+              <div class="task-verify-badge">✓ Pytest 9.2.0 Passed</div>
+            </div>
+          </article>
+
+          <!-- Task 2: R30-T042 -->
+          <article class="task-card" id="task-r30-t042">
+            <div class="task-card-header">
+              <div>
+                <span class="task-id-badge">Task 02 // R30-T042</span>
+                <h3 class="task-title">Define Zlib Input Boundaries</h3>
+              </div>
+              <a href="https://github.com/S-AI-Projects/learn-python/pull/79" target="_blank" rel="noopener noreferrer" class="task-pr-action">
+                Inspect PR #79 on GitHub ↗
+              </a>
+            </div>
+            <div class="task-body-grid">
+              <div class="task-pane">
+                <div class="task-pane-label">🛠️ Code Modifications</div>
+                <p class="task-pane-text">
+                  Constructed boundary regression tests in <code>src/standard_libraries/test_zlib.py</code>. Explicitly validated round-trip compression and decompression for boundary inputs including the empty byte sequence (<code>b''</code>) and the neighboring single-byte sequence (<code>b'\x00'</code>). Verified independently computed CRC-32 checksum values (<code>3523407757</code>) for the single-byte input.
+                </p>
+              </div>
+              <div class="task-pane">
+                <div class="task-pane-label">💡 Technical Rationale</div>
+                <p class="task-pane-text">
+                  The original example only tested a static 41-byte text fixture. Compression algorithms frequently crash or exhibit edge-case errors on 0-byte or 1-byte payloads due to dictionary initialization overhead. Testing these precise boundaries safeguards consumers utilizing <code>zlib</code> on arbitrary network packets.
+                </p>
+              </div>
+            </div>
+            <div class="task-meta-row">
+              <div class="task-meta-tags">
+                <span class="task-tag">File: test_zlib.py</span>
+                <span class="task-tag">+178 / -0 lines</span>
+                <span class="task-tag">Branch: student/e26b07f0835-R30-T042</span>
+              </div>
+              <div class="task-verify-badge">✓ 3 Tests Passed</div>
+            </div>
+          </article>
+
+          <!-- Task 3: R30-T043 -->
+          <article class="task-card" id="task-r30-t043">
+            <div class="task-card-header">
+              <div>
+                <span class="task-id-badge">Task 03 // R30-T043</span>
+                <h3 class="task-title">Add Regex Reference Comparison Tests</h3>
+              </div>
+              <a href="https://github.com/S-AI-Projects/learn-python/pull/93" target="_blank" rel="noopener noreferrer" class="task-pr-action">
+                Inspect PR #93 on GitHub ↗
+              </a>
+            </div>
+            <div class="task-body-grid">
+              <div class="task-pane">
+                <div class="task-pane-label">🛠️ Code Modifications</div>
+                <p class="task-pane-text">
+                  Built a standalone non-regex oracle using string <code>split()</code> and first-character checking to test <code>re.findall</code> across 21 lowercase ASCII inputs. Added regression suites for repeated-word regex substitution (<code>re.sub</code>) with triple and quadruple repeat patterns, and verified invariant output parity against <code>str.replace</code>.
+                </p>
+              </div>
+              <div class="task-pane">
+                <div class="task-pane-label">💡 Technical Rationale</div>
+                <p class="task-pane-text">
+                  Verifying regular expressions against an independent non-regex algorithmic reference prevents circular testing logic (where a flawed regex is tested against another regex). This ensures mathematical confidence in pattern tokenization and prevents regressions in text normalization routines.
+                </p>
+              </div>
+            </div>
+            <div class="task-meta-row">
+              <div class="task-meta-tags">
+                <span class="task-tag">File: test_re.py</span>
+                <span class="task-tag">+269 / -1 lines</span>
+                <span class="task-tag">Branch: student/e26b07f0835-R30-T043</span>
+              </div>
+              <div class="task-verify-badge">✓ 5 Tests Passed</div>
+            </div>
+          </article>
+
+          <!-- Task 4: R30-T044 -->
+          <article class="task-card" id="task-r30-t044">
+            <div class="task-card-header">
+              <div>
+                <span class="task-id-badge">Task 04 // R30-T044</span>
+                <h3 class="task-title">Add Docstring Invariant Property Tests</h3>
+              </div>
+              <a href="https://github.com/S-AI-Projects/learn-python/pull/94" target="_blank" rel="noopener noreferrer" class="task-pr-action">
+                Inspect PR #94 on GitHub ↗
+              </a>
+            </div>
+            <div class="task-body-grid">
+              <div class="task-pane">
+                <div class="task-pane-label">🛠️ Code Modifications</div>
+                <p class="task-pane-text">
+                  Normalized docstring assertions across Python versions using <code>inspect.cleandoc</code>. Implemented property testing with seed <code>44045</code> generating 100 bounded invocations of <code>do_nothing()</code> to guarantee consistent <code>None</code> return values and verify immutability of function-attribute dictionaries. Included a negative control test proving intentional mutants fail as expected.
+                </p>
+              </div>
+              <div class="task-pane">
+                <div class="task-pane-label">💡 Technical Rationale</div>
+                <p class="task-pane-text">
+                  In Python 3.15.2, runtime docstring indentation handling differed from raw literals, causing baseline assertion failures. Using <code>inspect.cleandoc</code> resolved cross-version compatibility issues while property-based testing proved that no-op functions do not leak state or produce unexpected side effects.
+                </p>
+              </div>
+            </div>
+            <div class="task-meta-row">
+              <div class="task-meta-tags">
+                <span class="task-tag">File: test_docstrings.py</span>
+                <span class="task-tag">+347 / -12 lines</span>
+                <span class="task-tag">Branch: student/e26b07f0835-R30-T044</span>
+              </div>
+              <div class="task-verify-badge">✓ Negative Control Verified</div>
+            </div>
+          </article>
+
+          <!-- Task 5: R30-T045 -->
+          <article class="task-card" id="task-r30-t045">
+            <div class="task-card-header">
+              <div>
+                <span class="task-id-badge">Task 05 // R30-T045</span>
+                <h3 class="task-title">Test Fibonacci Repeatability</h3>
+              </div>
+              <a href="https://github.com/S-AI-Projects/learn-python/pull/95" target="_blank" rel="noopener noreferrer" class="task-pr-action">
+                Inspect PR #95 on GitHub ↗
+              </a>
+            </div>
+            <div class="task-body-grid">
+              <div class="task-pane">
+                <div class="task-pane-label">🛠️ Code Modifications</div>
+                <p class="task-pane-text">
+                  Added deterministic repeatability tests for <code>fibonacci_at_position</code> across indices 0, 1, 2, 5, and 10, asserting exact outputs (0, 1, 1, 5, and 55). Executed sequential fixture runs interleaved with intermediate calls to test that internal memoization or global counters do not pollute repeated evaluations.
+                </p>
+              </div>
+              <div class="task-pane">
+                <div class="task-pane-label">💡 Technical Rationale</div>
+                <p class="task-pane-text">
+                  Mathematical sequence utilities must be pure and free from state retention. Interleaving calls with varying parameters validates that the function does not suffer from stale cache bugs or mutation leaks, ensuring idempotency across concurrent application threads.
+                </p>
+              </div>
+            </div>
+            <div class="task-meta-row">
+              <div class="task-meta-tags">
+                <span class="task-tag">File: test_fibonacci_module.py</span>
+                <span class="task-tag">+184 / -1 lines</span>
+                <span class="task-tag">Branch: student/e26b07f0835-R30-T045</span>
+              </div>
+              <div class="task-verify-badge">✓ Idempotence Verified</div>
+            </div>
+          </article>
+
+          <!-- Task 6: R30-T046 -->
+          <article class="task-card" id="task-r30-t046">
+            <div class="task-card-header">
+              <div>
+                <span class="task-id-badge">Task 06 // R30-T046</span>
+                <h3 class="task-title">Clarify Arithmetic Fixture Operands</h3>
+              </div>
+              <a href="https://github.com/S-AI-Projects/learn-python/pull/96" target="_blank" rel="noopener noreferrer" class="task-pr-action">
+                Inspect PR #96 on GitHub ↗
+              </a>
+            </div>
+            <div class="task-body-grid">
+              <div class="task-pane">
+                <div class="task-pane-label">🛠️ Code Modifications</div>
+                <p class="task-pane-text">
+                  Refactored <code>test_arithmetic_operators</code> by replacing magic numeric literals with explicitly named <code>left_operand</code> and <code>right_operand</code> bindings. Added regression test coverage for the baseline pair <code>(5, 3)</code> alongside neighboring pair <code>(6, 3)</code>, asserting exact arithmetic outputs across addition, subtraction, and multiplication.
+                </p>
+              </div>
+              <div class="task-pane">
+                <div class="task-pane-label">💡 Technical Rationale</div>
+                <p class="task-pane-text">
+                  Hardcoded magic numbers in test fixtures diminish code readability and mask subtle operator precedence bugs. Refactoring the test to use explicitly bound operands improves maintainability and makes extending the suite with negative numbers or floats straightforward.
+                </p>
+              </div>
+            </div>
+            <div class="task-meta-row">
+              <div class="task-meta-tags">
+                <span class="task-tag">File: test_arithmetic.py</span>
+                <span class="task-tag">+164 / -5 lines</span>
+                <span class="task-tag">Branch: student/e26b07f0835-R30-T046</span>
+              </div>
+              <div class="task-verify-badge">✓ Refactor Validated</div>
+            </div>
+          </article>
+
+          <!-- Task 7: R30-T047 -->
+          <article class="task-card" id="task-r30-t047">
+            <div class="task-card-header">
+              <div>
+                <span class="task-id-badge">Task 07 // R30-T047</span>
+                <h3 class="task-title">Add Executable File Methods Example</h3>
+              </div>
+              <a href="https://github.com/S-AI-Projects/learn-python/pull/97" target="_blank" rel="noopener noreferrer" class="task-pr-action">
+                Inspect PR #97 on GitHub ↗
+              </a>
+            </div>
+            <div class="task-body-grid">
+              <div class="task-pane">
+                <div class="task-pane-label">🛠️ Code Modifications</div>
+                <p class="task-pane-text">
+                  Created an in-memory <code>io.StringIO</code> worked example in <code>test_file_methods.py</code> evaluated via Python's <code>doctest</code> engine. Illustrated step-by-step stream pointer updates: <code>seek(0)</code>, <code>seek(6)</code>, single-character <code>read(1)</code> advancing pointer to 7, and verified cursor position with <code>tell()</code>.
+                </p>
+              </div>
+              <div class="task-pane">
+                <div class="task-pane-label">💡 Technical Rationale</div>
+                <p class="task-pane-text">
+                  File pointer manipulation is a notorious source of off-by-one errors when processing binary or text streams. Using an in-memory stream tested via doctest provides executable, self-verifying documentation that demonstrates exact pointer transitions without requiring external disk file dependencies.
+                </p>
+              </div>
+            </div>
+            <div class="task-meta-row">
+              <div class="task-meta-tags">
+                <span class="task-tag">File: test_file_methods.py</span>
+                <span class="task-tag">+247 / -1 lines</span>
+                <span class="task-tag">Branch: student/e26b07f0835-R30-T047</span>
+              </div>
+              <div class="task-verify-badge">✓ 11 Doctests Passed</div>
+            </div>
+          </article>
+
+          <!-- Task 8: R30-T048 -->
+          <article class="task-card" id="task-r30-t048">
+            <div class="task-card-header">
+              <div>
+                <span class="task-id-badge">Task 08 // R30-T048</span>
+                <h3 class="task-title">Cover Empty Class Instance Fallback</h3>
+              </div>
+              <a href="https://github.com/S-AI-Projects/learn-python/pull/98" target="_blank" rel="noopener noreferrer" class="task-pr-action">
+                Inspect PR #98 on GitHub ↗
+              </a>
+            </div>
+            <div class="task-body-grid">
+              <div class="task-pane">
+                <div class="task-pane-label">🛠️ Code Modifications</div>
+                <p class="task-pane-text">
+                  Added coverage in <code>test_class_objects.py</code> for an uninitialized <code>ComplexNumber()</code> instance without constructor arguments. Asserted that the instance's <code>__dict__</code> remains completely empty while attribute lookups for <code>real</code> and <code>imaginary</code> successfully resolve to class-level attributes. Corrected an existing assertion bug where tuple comparisons only evaluated truthiness.
+                </p>
+              </div>
+              <div class="task-pane">
+                <div class="task-pane-label">💡 Technical Rationale</div>
+                <p class="task-pane-text">
+                  Understanding Python's method resolution order and attribute lookup fallback (instance dictionary to class dictionary) is essential for object-oriented architecture. Additionally, fixing the tuple assertion ensured that both real and imaginary values are strictly validated rather than passing on truthiness alone.
+                </p>
+              </div>
+            </div>
+            <div class="task-meta-row">
+              <div class="task-meta-tags">
+                <span class="task-tag">File: test_class_objects.py</span>
+                <span class="task-tag">+188 / -1 lines</span>
+                <span class="task-tag">Branch: student/e26b07f0835-R30-T048</span>
+              </div>
+              <div class="task-verify-badge">✓ Class Fallback Verified</div>
+            </div>
+          </article>
+
+          <!-- Task 9: R30-T049 -->
+          <article class="task-card" id="task-r30-t049">
+            <div class="task-card-header">
+              <div>
+                <span class="task-id-badge">Task 09 // R30-T049</span>
+                <h3 class="task-title">Measure Tuple Indexing Scaling</h3>
+              </div>
+              <a href="https://github.com/S-AI-Projects/learn-python/pull/99" target="_blank" rel="noopener noreferrer" class="task-pr-action">
+                Inspect PR #99 on GitHub ↗
+              </a>
+            </div>
+            <div class="task-body-grid">
+              <div class="task-pane">
+                <div class="task-pane-label">🛠️ Code Modifications</div>
+                <p class="task-pane-text">
+                  Introduced an empirical benchmarking suite in <code>src/data_types/test_tuples.py</code> measuring CPython tuple indexing across orders of magnitude: N = 16, 1024, and 65,536 elements. Documented constant time O(1) worst-case access complexity in CPython, recording median access speeds (5.34 ns, 5.71 ns, and 5.53 ns) across five repetitions with isolated timer intervals.
+                </p>
+              </div>
+              <div class="task-pane">
+                <div class="task-pane-label">💡 Technical Rationale</div>
+                <p class="task-pane-text">
+                  Software engineers frequently choose tuples under the theoretical assumption of O(1) random access. Providing empirical benchmarks validates this algorithmic property in practice, proving to students and users that tuple index operations do not scale linearly with array length.
+                </p>
+              </div>
+            </div>
+            <div class="task-meta-row">
+              <div class="task-meta-tags">
+                <span class="task-tag">File: test_tuples.py</span>
+                <span class="task-tag">+243 / -0 lines</span>
+                <span class="task-tag">Branch: student/e26b07f0835-R30-T049</span>
+              </div>
+              <div class="task-verify-badge">✓ O(1) Access Proven</div>
+            </div>
+          </article>
+
+          <!-- Task 10: R30-T050 -->
+          <article class="task-card" id="task-r30-t050">
+            <div class="task-card-header">
+              <div>
+                <span class="task-id-badge">Task 10 // R30-T050</span>
+                <h3 class="task-title">Add Mutation-Resistant List Indexing Test</h3>
+              </div>
+              <a href="https://github.com/S-AI-Projects/learn-python/pull/100" target="_blank" rel="noopener noreferrer" class="task-pr-action">
+                Inspect PR #100 on GitHub ↗
+              </a>
+            </div>
+            <div class="task-body-grid">
+              <div class="task-pane">
+                <div class="task-pane-label">🛠️ Code Modifications</div>
+                <p class="task-pane-text">
+                  Implemented a neighboring-input regression test in <code>test_lists.py</code> asserting boundary elements <code>(1, 36)</code> for a 6-item squares array. Developed an automated test mutation harness in <code>check.py</code> that mutates a temporary copy from <code>squares[-1]</code> to <code>squares[-2]</code> and confirms the regression suite immediately catches the fault (1 failed, expecting 36, receiving 25).
+                </p>
+              </div>
+              <div class="task-pane">
+                <div class="task-pane-label">💡 Technical Rationale</div>
+                <p class="task-pane-text">
+                  Standard unit tests often pass even when critical indexing logic is modified. By actively verifying that a deliberate off-by-one index mutation causes the test suite to fail, we mathematically prove that the test suite is mutation-resistant and capable of protecting production code from human error.
+                </p>
+              </div>
+            </div>
+            <div class="task-meta-row">
+              <div class="task-meta-tags">
+                <span class="task-tag">File: test_lists.py</span>
+                <span class="task-tag">+255 / -0 lines</span>
+                <span class="task-tag">Branch: student/e26b07f0835-R30-T050</span>
+              </div>
+              <div class="task-verify-badge">✓ Mutant Detected: 1 Failed</div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 4: FEATURED TECHNICAL PROJECTS (2.5 Marks)
+         Detailed overviews of >=2 technical projects with problem statement,
+         solution architecture, tech stack, individual contribution, and repo link.
          ========================================================================== -->
     <section class="section" id="projects">
       <div class="container">
-        <header class="section-header">
-          <div class="section-kicker">CLASSIFIED PORTFOLIO OPERATIONS</div>
-          <h2 class="section-title">Featured Combat Systems</h2>
-          <p class="section-subtitle">
-            Core gameplay systems and combat architectures engineered to match Call of Duty's signature fluidity, instantaneous responsiveness, and multiplayer fidelity.
+        <div class="section-header">
+          <div class="section-pill">Section 04 // Portfolio Projects</div>
+          <h2 class="section-title">Featured Technical Projects</h2>
+          <p class="section-description">
+            In-depth architectural case studies of software engineering projects demonstrating end-to-end development, full-stack architecture, and user-facing AI applications.
           </p>
-        </header>
+        </div>
 
-        <div class="projects-container">
-          <!-- Project 1: Deterministic Ballistics Engine -->
-          <article class="project-case-card tactical-frame">
-            <div class="corner-tl"></div><div class="corner-tr"></div>
-            <div class="corner-bl"></div><div class="corner-br"></div>
-
-            <div class="project-info-col">
-              <div class="project-status-tag">
-                <span class="live-dot"></span>
-                <span>STATUS: OPERATIONAL // DEPLOYED IN PROTOTYPE</span>
-              </div>
-              <h3 class="project-heading">Project ApexBallistics: Deterministic Combat &amp; Recoil Engine</h3>
-              <div class="project-target-spec">// TARGET: CALL OF DUTY WEAPONS &amp; BALLISTICS PIPELINE</div>
+        <div class="projects-grid">
+          <!-- Project 1: NexusGroq -->
+          <article class="project-card">
+            <div class="project-card-top">
+              <div class="project-category">Full-Stack AI Application</div>
+              <h3 class="project-name">NexusGroq</h3>
               <p class="project-summary">
-                A custom C++ ballistics and recoil engine engineered for high-cadence first-person shooters. Replaces simplistic raycasts with continuous collision detection (CCD) sub-millimeter bullet trajectories, atmospheric drag, wind resistance, and multi-layer material penetration physics.
+                A high-performance, responsive AI chat and prompt engineering interface inspired by Groq LPU ultra-low latency architecture.
               </p>
-
-              <ul class="feature-bullets-list">
-                <li class="feature-bullet-item">
-                  <span class="bullet-icon">▶</span>
-                  <span><strong>Deterministic Trajectory Integration:</strong> Implemented 4th-order Runge-Kutta (RK4) integration for perfectly reproducible bullet arcs across client and server.</span>
-                </li>
-                <li class="feature-bullet-item">
-                  <span class="bullet-icon">▶</span>
-                  <span><strong>Material Penetration System:</strong> Real-time raycast marching that computes material thickness, density coefficient, and calculates post-penetration velocity drop and trajectory deflection.</span>
-                </li>
-                <li class="feature-bullet-item">
-                  <span class="bullet-icon">▶</span>
-                  <span><strong>Zero Heap Allocations:</strong> Ring-buffered projectile memory pool maintaining steady 0ms garbage collection pauses even during 50-player simultaneous firefights.</span>
-                </li>
-              </ul>
-
-              <div class="tech-tags-list">
-                <span class="tech-pill highlight">C++20</span>
-                <span class="tech-pill highlight">RK4 Numerical Integration</span>
-                <span class="tech-pill">Memory Pool Pooling</span>
-                <span class="tech-pill">Material Penetration</span>
-                <span class="tech-pill">Unreal Engine 5</span>
+            </div>
+            <div class="project-card-body">
+              <div class="project-spec-group">
+                <div class="project-spec-title">Problem Statement</div>
+                <div class="project-spec-desc">
+                  Existing LLM chat interfaces frequently suffer from high UI latency, sluggish model switching, and lack intuitive tools for developers to dynamically test system prompts, temperature controls, and model context boundaries in real-time.
+                </div>
               </div>
-
-              <div class="project-links-row">
-                <a href="#code-vault" class="btn-tactical btn-tactical-outline">
-                  <span>INSPECT C++ IMPLEMENTATION</span>
-                </a>
+              <div class="project-spec-group">
+                <div class="project-spec-title">Solution Architecture</div>
+                <div class="project-spec-desc">
+                  Architected a lightweight Single Page Application utilizing Vite, React, and Tailwind CSS. Integrated client-side state caching with Groq Cloud APIs to support instant switching between flagship models (LLaMA 3.3 70B, Mixtral 8x7B, Gemma 2), markdown rendering with syntax highlighting, and conversation export capabilities.
+                </div>
+              </div>
+              <div class="project-spec-group">
+                <div class="project-spec-title">Tech Stack</div>
+                <div class="project-tech-tags">
+                  <span class="tech-tag">React</span>
+                  <span class="tech-tag">Vite</span>
+                  <span class="tech-tag">Tailwind CSS</span>
+                  <span class="tech-tag">Groq API</span>
+                  <span class="tech-tag">JavaScript ES6+</span>
+                </div>
+              </div>
+              <div class="project-spec-group">
+                <div class="project-spec-title">Individual Contribution</div>
+                <div class="project-spec-desc">
+                  Sole creator. Implemented entire UI layout, responsive drawer navigation, custom prompt engineering control desk, API token handling, and automated GitHub deployment workflows.
+                </div>
               </div>
             </div>
-
-            <div class="project-media-col">
-              <div class="project-image-box">
-                <img src="assets/ballistics-engine.jpg" alt="Tactical Gunsmith Ballistics Engineering Blueprint" width="1280" height="720">
-                <span class="project-image-tag">// SCHEMATIC: M4_BALLISTIC_MATRIX</span>
-              </div>
+            <div class="project-card-footer">
+              <a href="https://github.com/rohitkshirsagar08/nexus-groq" target="_blank" rel="noopener noreferrer" class="project-gh-link">
+                View Repository &amp; Documentation ↗
+              </a>
+              <span class="task-tag">Public Repository</span>
             </div>
           </article>
 
-          <!-- Project 2: NetSync 128 Multiplayer Netcode -->
-          <article class="project-case-card tactical-frame reverse">
-            <div class="corner-tl"></div><div class="corner-tr"></div>
-            <div class="corner-bl"></div><div class="corner-br"></div>
-
-            <div class="project-info-col">
-              <div class="project-status-tag">
-                <span class="live-dot" style="background:var(--hud-amber); box-shadow:0 0 8px var(--hud-amber);"></span>
-                <span style="color:var(--hud-amber);">STATUS: PRODUCTION READY // WARZONE SPEC</span>
-              </div>
-              <h3 class="project-heading">NetSync-128: Low-Latency Multiplayer Combat Architecture</h3>
-              <div class="project-target-spec">// TARGET: HIGH-TICKRATE DEDICATED MULTIPLAYER SERVERS</div>
+          <!-- Project 2: Perplexity Explorer -->
+          <article class="project-card">
+            <div class="project-card-top">
+              <div class="project-category">Interactive AI Educational Platform</div>
+              <h3 class="project-name">Perplexity Explorer</h3>
               <p class="project-summary">
-                A server-authoritative multiplayer netcode architecture supporting 128Hz tick rates with rollback client-side prediction and sub-frame lag-compensated hit validation. Guarantees that "what you shoot is what you hit," even with varying player latencies up to 250ms RTT.
+                Interactive web application demystifying token probabilities, surprisal, and sequence perplexity in autoregressive language models.
               </p>
-
-              <ul class="feature-bullets-list">
-                <li class="feature-bullet-item">
-                  <span class="bullet-icon">▶</span>
-                  <span><strong>Historical Rewind Hit Registration:</strong> Server maintains a rolling 32-snapshot circular buffer of player bounding capsules, rewinding targets to the exact millisecond of the shooter's local frame.</span>
-                </li>
-                <li class="feature-bullet-item">
-                  <span class="bullet-icon">▶</span>
-                  <span><strong>Client-Side Rollback &amp; Reconciliation:</strong> Smoothly reconciles mispredictions using hermite cubic splines to prevent visual snapping during server state corrections.</span>
-                </li>
-                <li class="feature-bullet-item">
-                  <span class="bullet-icon">▶</span>
-                  <span><strong>Bandwidth Quantization:</strong> Compact bit-packed network packets compressing position, rotation, and input bitmasks from 64 bytes down to 9 bytes per tick.</span>
-                </li>
-              </ul>
-
-              <div class="tech-tags-list">
-                <span class="tech-pill highlight">C++20</span>
-                <span class="tech-pill highlight">UDP Sockets</span>
-                <span class="tech-pill">Lag Compensation Rewind</span>
-                <span class="tech-pill">Bit-Packing Quantization</span>
-                <span class="tech-pill">Circular Ring Buffers</span>
+            </div>
+            <div class="project-card-body">
+              <div class="project-spec-group">
+                <div class="project-spec-title">Problem Statement</div>
+                <div class="project-spec-desc">
+                  Students and junior engineers entering AI struggle to intuitively grasp mathematical concepts such as cross-entropy loss, token surprisal (\(-\log_2 P\)), and how model perplexity indicates generation confidence.
+                </div>
               </div>
-
-              <div class="project-links-row">
-                <a href="#code-vault" class="btn-tactical btn-tactical-outline">
-                  <span>VIEW ROLLBACK ARCHITECTURE</span>
-                </a>
+              <div class="project-spec-group">
+                <div class="project-spec-title">Solution Architecture</div>
+                <div class="project-spec-desc">
+                  Developed an interactive TypeScript web application that visually unpacks sentence sequences into discrete tokens. Computes real-time surprisal metrics, plots probability distribution graphs, and demonstrates how low-surprisal sequences yield superior perplexity scores.
+                </div>
+              </div>
+              <div class="project-spec-group">
+                <div class="project-spec-title">Tech Stack</div>
+                <div class="project-tech-tags">
+                  <span class="tech-tag">TypeScript</span>
+                  <span class="tech-tag">Next.js / React</span>
+                  <span class="tech-tag">Tailwind CSS</span>
+                  <span class="tech-tag">Data Visualization</span>
+                </div>
+              </div>
+              <div class="project-spec-group">
+                <div class="project-spec-title">Individual Contribution</div>
+                <div class="project-spec-desc">
+                  Sole author. Formulated statistical perplexity algorithms, built the token highlight visualization canvas, and crafted comprehensive documentation detailing mathematical formulas.
+                </div>
               </div>
             </div>
-
-            <div class="project-media-col">
-              <div class="project-image-box">
-                <img src="assets/network-architecture.jpg" alt="Tactical Multiplayer Netcode War Room Architecture" width="1280" height="720">
-                <span class="project-image-tag">// TELEMETRY: 128HZ_ROLLBACK_TIMELINE</span>
-              </div>
+            <div class="project-card-footer">
+              <a href="https://github.com/rohitkshirsagar08/perplexity-explorer" target="_blank" rel="noopener noreferrer" class="project-gh-link">
+                View Repository &amp; Documentation ↗
+              </a>
+              <span class="task-tag">Public Repository</span>
             </div>
           </article>
         </div>
@@ -624,251 +827,119 @@ Offset += Velocity * DeltaTime;
     </section>
 
     <!-- ==========================================================================
-         C++ ARCHITECTURE & CODE VAULT
+         SECTION 5: EDUCATION & ACHIEVEMENTS (1 Mark)
+         Degree, institution, graduation date, verified accomplishments with dates & links.
          ========================================================================== -->
-    <section class="section" id="code-vault">
+    <section class="section section-alt" id="education">
       <div class="container">
-        <header class="section-header">
-          <div class="section-kicker">MISSION CODE SAMPLES</div>
-          <h2 class="section-title">C++ Combat Architecture Vault</h2>
-          <p class="section-subtitle">
-            Inspect production-grade C++ implementations demonstrating mathematical rigor, performance consciousness, and clean architecture suited for AAA game engines.
+        <div class="section-header">
+          <div class="section-pill">Section 05 // Academic &amp; Honors</div>
+          <h2 class="section-title">Education &amp; Achievements</h2>
+          <p class="section-description">
+            Academic degree, university background, graduation timeline, and verified technical milestones.
           </p>
-        </header>
-
-        <div class="code-terminal-card tactical-frame">
-          <div class="corner-tl"></div><div class="corner-tr"></div>
-          <div class="corner-bl"></div><div class="corner-br"></div>
-
-          <!-- Terminal Tabs -->
-          <div class="terminal-header">
-            <div class="terminal-tabs">
-              <button type="button" class="terminal-tab active" data-snippet="recoil">
-                // RecoilSpringModel.cpp
-              </button>
-              <button type="button" class="terminal-tab" data-snippet="lagcomp">
-                // LagCompensationManager.cpp
-              </button>
-              <button type="button" class="terminal-tab" data-snippet="ballistics">
-                // BallisticsIntegrator.cpp
-              </button>
-            </div>
-
-            <div class="terminal-actions">
-              <button type="button" class="btn-copy-code" id="copyCodeBtn">
-                COPY SNIPPET
-              </button>
-            </div>
-          </div>
-
-          <!-- Code Display Body -->
-          <pre class="code-display-body"><code id="terminalCodeDisplay">// RecoilSpringModel.cpp - Damped Harmonic Recoil Kinetic Model
-// Architecture for Call of Duty style procedural gunplay
-#include "RecoilSpringModel.h"
-
-void URecoilSpringComponent::TickComponent(float DeltaTime)
-{
-    Super::TickComponent(DeltaTime);
-
-    // Apply 2nd order differential spring mechanics: d2x/dt2 = -k*x - c*v
-    const FVector SpringForce = -Stiffness * CurrentRecoilOffset;
-    const FVector DampingForce = -Damping * RecoilVelocity;
-    const FVector Acceleration = (SpringForce + DampingForce) / WeaponMass;
-
-    RecoilVelocity += Acceleration * DeltaTime;
-    CurrentRecoilOffset += RecoilVelocity * DeltaTime;
-
-    // Apply procedural weapon kick to First-Person Camera & Weapon Bone IK
-    if (APlayerCameraManager* Cam = GetPlayerCameraManager())
-    {
-        Cam->AddPitchInput(CurrentRecoilOffset.Y * CameraKickFactor);
-        Cam->AddYawInput(CurrentRecoilOffset.Z * CameraSwayFactor);
-    }
-}
-
-void URecoilSpringComponent::ApplyRecoilImpulse(const FRecoilImpulseConfig& Impulse)
-{
-    // High-cadence linear and angular kick injection
-    RecoilVelocity.X += Impulse.RearKickMetersPerSec;
-    RecoilVelocity.Y += Impulse.MuzzleRiseDegPerSec * FMath::FRandRange(0.85f, 1.15f);
-    RecoilVelocity.Z += Impulse.HorizontalClimbDegPerSec * FMath::FRandRange(-1.0f, 1.0f);
-}</code></pre>
         </div>
-      </div>
-    </section>
 
-    <!-- ==========================================================================
-         COMBAT SERVICE RECORD / TIMELINE
-         ========================================================================== -->
-    <section class="section" id="service-record">
-      <div class="container">
-        <header class="section-header">
-          <div class="section-kicker">SERVICE DOSSIER</div>
-          <h2 class="section-title">Deployment &amp; Experience Record</h2>
-          <p class="section-subtitle">
-            Professional trajectory and combat engineering background focused on gameplay systems, physics, and multiplayer engineering.
-          </p>
-        </header>
+        <div class="edu-achieve-grid">
+          <!-- Column 1: Academic Background -->
+          <div class="timeline-column">
+            <h3 class="column-title">🎓 Academic Education</h3>
 
-        <div class="timeline-container">
-          <!-- Item 1 -->
-          <div class="timeline-item">
-            <article class="timeline-card tactical-frame">
-              <div class="corner-tl"></div><div class="corner-tr"></div>
-              <div class="corner-bl"></div><div class="corner-br"></div>
-              <div class="timeline-date">// 2024 — PRESENT // ACTIVE OPERATION</div>
-              <h3 class="timeline-role">Lead Gameplay &amp; Combat Systems Engineer</h3>
-              <div class="timeline-company">TACTICAL SHOOTER STUDIOS // CORE COMBAT INITIATIVE</div>
-              <p class="timeline-desc">
-                Architecting core gunplay mechanics, procedural recoil springs, ADS transitions, and custom character movement state machines (slide-canceling, ledge mounting, tactical sprint). Collaborating directly with combat designers to tune the microsecond feel of weapon handling.
+            <div class="timeline-card">
+              <div class="timeline-date-badge">2026 — Present</div>
+              <h4 class="timeline-heading">Bachelor of Technology in Computer Science &amp; Engineering</h4>
+              <div class="timeline-institution">University Engineering Department</div>
+              <p class="timeline-body">
+                Currently in 1st Year (Semester 1). Coursework and practical foundations covering Problem Solving &amp; Programming Fundamentals, Discrete Mathematics, Object-Oriented Principles, and Artificial Intelligence Systems.
               </p>
-            </article>
+              <a href="https://github.com/rohitkshirsagar08" target="_blank" rel="noopener noreferrer" class="verify-link-btn">
+                Verified Student Profile on GitHub ↗
+              </a>
+            </div>
           </div>
 
-          <!-- Item 2 -->
-          <div class="timeline-item amber">
-            <article class="timeline-card tactical-frame">
-              <div class="corner-tl"></div><div class="corner-tr"></div>
-              <div class="corner-bl"></div><div class="corner-br"></div>
-              <div class="timeline-date">// 2022 — 2024 // MULTIPLAYER REPLICATION</div>
-              <h3 class="timeline-role">Multiplayer &amp; Systems Programmer</h3>
-              <div class="timeline-company">APEX NETWORK LABS</div>
-              <p class="timeline-desc">
-                Engineered server-side rollback netcode and lag compensation algorithms. Reduced bandwidth utilization by 42% through bit-level payload quantization and delta snapshot compression for 64-player dedicated servers.
-              </p>
-            </article>
-          </div>
+          <!-- Column 2: Verified Accomplishments -->
+          <div class="timeline-column">
+            <h3 class="column-title">🏆 Verified Achievements</h3>
 
-          <!-- Item 3 -->
-          <div class="timeline-item">
-            <article class="timeline-card tactical-frame">
-              <div class="corner-tl"></div><div class="corner-tr"></div>
-              <div class="corner-bl"></div><div class="corner-br"></div>
-              <div class="timeline-date">// 2018 — 2022 // TECHNICAL FOUNDATION</div>
-              <h3 class="timeline-role">B.S. in Computer Science &amp; Game Engineering</h3>
-              <div class="timeline-company">UNIVERSITY OF ENGINEERING &amp; TECHNOLOGY</div>
-              <p class="timeline-desc">
-                Specialized in 3D Mathematics, Linear Algebra, Real-Time Physics Simulation, Game Engine Architecture, and Multi-Threaded Systems Programming. Graduated with Honors.
+            <div class="timeline-card">
+              <div class="timeline-date-badge">November 2026</div>
+              <h4 class="timeline-heading">10/10 Completed Open-Source S&amp;AI Pull Requests</h4>
+              <div class="timeline-institution">S-AI-Projects / learn-python Coursework</div>
+              <p class="timeline-body">
+                Authored and submitted 10 comprehensive pull requests covering unit testing, boundary analysis, property invariants, and mutation-resistant test verification across the official course curriculum repository.
               </p>
-            </article>
+              <a href="https://github.com/S-AI-Projects/learn-python/pulls?q=is%3Apr+author%3Arohitkshirsagar08" target="_blank" rel="noopener noreferrer" class="verify-link-btn">
+                Verify 10 Pull Requests on GitHub ↗
+              </a>
+            </div>
+
+            <div class="timeline-card">
+              <div class="timeline-date-badge">October 2026</div>
+              <h4 class="timeline-heading">Open-Source Hacktoberfest 2026 Contributor</h4>
+              <div class="timeline-institution">Global Open Source Community Initiative</div>
+              <p class="timeline-body">
+                Actively contributed code, bug fixes, and documentation improvements to public open-source software repositories during the global Hacktoberfest celebration.
+              </p>
+              <a href="https://github.com/rohitkshirsagar08/hactober-2026-B" target="_blank" rel="noopener noreferrer" class="verify-link-btn">
+                Verify Repository &amp; Commit History ↗
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ==========================================================================
-         TRANSMISSION TERMINAL / CONTACT
+         SECTION 6: CONTACT (1 Mark)
+         Functional links to Professional Email, GitHub, and LinkedIn profiles.
          ========================================================================== -->
-    <section class="section" id="transmission">
+    <section class="section" id="contact">
       <div class="container">
-        <header class="section-header">
-          <div class="section-kicker">SECURE COMMS TRANSMISSION</div>
-          <h2 class="section-title">Initiate Contact &amp; Recruitment</h2>
-          <p class="section-subtitle">
-            Direct communication link to Rohit Kshirsagar. Available for technical interviews, combat gameplay programming roles, and relocation for Call of Duty development teams.
+        <div class="contact-wrapper">
+          <div class="section-pill">Section 06 // Connect</div>
+          <h2 class="section-title">Get in Touch</h2>
+          <p class="section-description">
+            I am actively seeking software engineering internships, open-source collaborations, and technical discussions. All channels below are functional and verified.
           </p>
-        </header>
 
-        <div class="transmission-layout">
-          <!-- Intel Channels Column -->
-          <div class="intel-info-col">
-            <a href="mailto:rohitkshirsagar@example.com" class="comms-channel-card tactical-frame" id="contactEmailLink">
-              <div class="corner-tl"></div><div class="corner-tr"></div>
-              <div class="corner-bl"></div><div class="corner-br"></div>
-              <div class="channel-icon">✉</div>
-              <div class="channel-details">
-                <span class="channel-label">TACTICAL COMMS EMAIL</span>
-                <span class="channel-val">rohitkshirsagar@example.com</span>
-              </div>
+          <div class="contact-channels">
+            <!-- Email -->
+            <a href="mailto:rohitkshirsagar08@gmail.com" class="contact-card-btn" id="contactEmailLink">
+              <div class="contact-icon">✉️</div>
+              <div class="contact-method-name">Email</div>
+              <div class="contact-handle">rohitkshirsagar08@gmail.com</div>
             </a>
 
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="comms-channel-card tactical-frame" id="contactLinkedinLink">
-              <div class="corner-tl"></div><div class="corner-tr"></div>
-              <div class="corner-bl"></div><div class="corner-br"></div>
-              <div class="channel-icon">in</div>
-              <div class="channel-details">
-                <span class="channel-label">PROFESSIONAL INTEL (LINKEDIN)</span>
-                <span class="channel-val">linkedin.com/in/rohitkshirsagar</span>
-              </div>
+            <!-- GitHub -->
+            <a href="https://github.com/rohitkshirsagar08" target="_blank" rel="noopener noreferrer" class="contact-card-btn" id="contactGithubLink">
+              <div class="contact-icon">🐙</div>
+              <div class="contact-method-name">GitHub</div>
+              <div class="contact-handle">@rohitkshirsagar08</div>
             </a>
 
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="comms-channel-card tactical-frame" id="contactGithubLink">
-              <div class="corner-tl"></div><div class="corner-tr"></div>
-              <div class="corner-bl"></div><div class="corner-br"></div>
-              <div class="channel-icon">⌥</div>
-              <div class="channel-details">
-                <span class="channel-label">CODE REPOSITORY (GITHUB)</span>
-                <span class="channel-val">github.com/rohitkshirsagar</span>
-              </div>
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/rohitkshirsagar08" target="_blank" rel="noopener noreferrer" class="contact-card-btn" id="contactLinkedinLink">
+              <div class="contact-icon">💼</div>
+              <div class="contact-method-name">LinkedIn</div>
+              <div class="contact-handle">rohitkshirsagar08</div>
             </a>
-
-            <div class="comms-channel-card tactical-frame amber-accent">
-              <div class="corner-tl"></div><div class="corner-tr"></div>
-              <div class="corner-bl"></div><div class="corner-br"></div>
-              <div class="channel-icon" style="color:var(--hud-amber);">★</div>
-              <div class="channel-details">
-                <span class="channel-label">DEPLOYMENT STATUS</span>
-                <span class="channel-val" style="color:var(--hud-amber);">READY FOR CALL OF DUTY RECRUITMENT</span>
-              </div>
-            </div>
           </div>
 
-          <!-- Transmission Form -->
-          <div class="transmission-form-card tactical-frame">
-            <div class="corner-tl"></div><div class="corner-tr"></div>
-            <div class="corner-bl"></div><div class="corner-br"></div>
-
-            <form class="contact-form" id="transmissionForm">
-              <div class="form-group">
-                <label for="callerName" class="form-label">// RECRUITER / CALLSIGN NAME</label>
-                <input type="text" id="callerName" class="form-input" placeholder="e.g. Capt. Price / Activision Recruiter" required>
-              </div>
-
-              <div class="form-group">
-                <label for="callerStudio" class="form-label">// STUDIO / ORGANIZATION</label>
-                <input type="text" id="callerStudio" class="form-input" placeholder="e.g. Infinity Ward / Treyarch / Activision" required>
-              </div>
-
-              <div class="form-group">
-                <label for="missionType" class="form-label">// TRANSMISSION PURPOSE</label>
-                <select id="missionType" class="form-select">
-                  <option value="interview">Call of Duty Gameplay Programmer Interview</option>
-                  <option value="contract">Combat Mechanics Contract / Advisory</option>
-                  <option value="code_review">C++ Engine Architecture Discussion</option>
-                  <option value="general">General Recruitment Transmission</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="callerMessage" class="form-label">// MISSION TRANSMISSION INTEL</label>
-                <textarea id="callerMessage" class="form-textarea" placeholder="Detail role requirements, engine version, and interview scheduling..." required></textarea>
-              </div>
-
-              <button type="submit" class="btn-tactical btn-tactical-primary">
-                DISPATCH ENCRYPTED TRANSMISSION ➔
-              </button>
-
-              <div class="form-feedback-overlay" id="transmissionFeedback">
-                ✓ TRANSMISSION DISPATCHED TO ROHIT KSHIRSAGAR. COMMS CHANNEL SECURED.
-              </div>
-            </form>
-          </div>
+          <p style="font-size: 0.9rem; color: var(--text-muted);">
+            Official Course GitHub Handle: <strong style="color: var(--orange-600);">rohitkshirsagar08</strong> (matching all 10 S&amp;AI pull requests).
+          </p>
         </div>
       </div>
     </section>
   </main>
 
   <!-- ==========================================================================
-       HUD FOOTER
+       SITE FOOTER
        ========================================================================== -->
-  <footer class="hud-footer">
-    <div class="container footer-grid">
-      <div class="footer-copy">
-        ROHIT KSHIRSAGAR &copy; 2026 // GAMEPLAY &amp; COMBAT PROGRAMMER // PORTFOLIO
-      </div>
-      <div class="footer-disclaimer">
-        Call of Duty, Modern Warfare, and Warzone are registered trademarks of Activision Publishing, Inc. This portfolio is a non-commercial candidate demonstration portfolio showcasing gameplay engineering capabilities targeting Activision studios.
-      </div>
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Rohit Kshirsagar. Built for Software &amp; AI Engineering (S&amp;AI) Portfolio Evaluation.</p>
     </div>
   </footer>
 
