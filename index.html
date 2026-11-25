@@ -868,6 +868,53 @@
               <span class="task-tag">Public Repository</span>
             </div>
           </article>
+
+          <!-- Project 4: minigit -->
+          <article class="project-card">
+            <div class="project-card-top">
+              <div class="project-category">Systems Software &amp; Version Control</div>
+              <h3 class="project-name">minigit</h3>
+              <p class="project-summary">
+                A lightweight Git implementation built from scratch in pure Python with zero external dependencies, creating real Git-compatible objects.
+              </p>
+            </div>
+            <div class="project-card-body">
+              <div class="project-spec-group">
+                <div class="project-spec-title">Problem Statement</div>
+                <div class="project-spec-desc">
+                  Developers interact with Git daily through high-level porcelain commands, but rarely understand the underlying directed acyclic graph (DAG), SHA-1 content addressing, and binary object serialization that guarantee repository integrity.
+                </div>
+              </div>
+              <div class="project-spec-group">
+                <div class="project-spec-title">Solution Architecture</div>
+                <div class="project-spec-desc">
+                  Constructed a modular version control engine from scratch in pure Python 3.10+. Implemented core Git internals: SHA-1 content-addressed blob storage, tree objects, commit nodes, ref pointers, staging index manipulation, and working directory state tracking. Emits strict binary Git objects readable by official GNU Git.
+                </div>
+              </div>
+              <div class="project-spec-group">
+                <div class="project-spec-title">Tech Stack</div>
+                <div class="project-tech-tags">
+                  <span class="tech-tag">Python 3.10+</span>
+                  <span class="tech-tag">SHA-1 Cryptographic Hashing</span>
+                  <span class="tech-tag">Zlib Compression</span>
+                  <span class="tech-tag">Systems Programming</span>
+                  <span class="tech-tag">Pytest</span>
+                </div>
+              </div>
+              <div class="project-spec-group">
+                <div class="project-spec-title">Individual Contribution</div>
+                <div class="project-spec-desc">
+                  Open-source contributor &amp; maintainer. Studied and implemented Git object model specifications, added automated unit tests with Pytest, and validated interoperability between minigit repositories and the official Git CLI.
+                </div>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <a href="https://github.com/rohitkshirsagar08/minigit" target="_blank" rel="noopener noreferrer" class="project-gh-link">
+                View Repository &amp; Documentation ↗
+              </a>
+              <span class="task-tag">Public Repository</span>
+            </div>
+          </article>
         </div>
       </div>
     </section>
